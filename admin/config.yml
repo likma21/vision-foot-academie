@@ -1,0 +1,43 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: false
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "site"
+    label: "Contenu du site"
+    files:
+      - file: "content/site.json"
+        name: "site"
+        label: "Vitrine Vision Foot Académie"
+        format: "json"
+        fields:
+          - { label: "Texte galerie", name: "galleryIntro", widget: "text" }
+          - { label: "Galerie - titre principal", name: "galleryTitle1", widget: "string" }
+          - { label: "Galerie - texte principal", name: "galleryText1", widget: "string" }
+          - { label: "Galerie - titre vidéo 1", name: "galleryTitle2", widget: "string" }
+          - { label: "Galerie - titre tournoi", name: "galleryTitle3", widget: "string" }
+          - { label: "Galerie - titre vidéo 2", name: "galleryTitle4", widget: "string" }
+          - { label: "Texte actualités", name: "newsIntro", widget: "text" }
+          - { label: "Actualité 1 - titre", name: "newsTitle1", widget: "string" }
+          - { label: "Actualité 1 - texte", name: "newsText1", widget: "text" }
+          - { label: "Actualité 2 - titre", name: "newsTitle2", widget: "string" }
+          - { label: "Actualité 2 - texte", name: "newsText2", widget: "text" }
+          - { label: "Actualité 3 - titre", name: "newsTitle3", widget: "string" }
+          - { label: "Actualité 3 - texte", name: "newsText3", widget: "text" }
+          - { label: "Appel à action réseaux sociaux", name: "socialIntro", widget: "text" }
+          - { label: "Lien Facebook", name: "facebookUrl", widget: "string", required: false }
+          - { label: "Lien Instagram", name: "instagramUrl", widget: "string", required: false }
+          - { label: "Lien TikTok", name: "tiktokUrl", widget: "string", required: false }
+          - { label: "Sponsor 1 - nom", name: "sponsor1", widget: "string", required: false }
+          - { label: "Sponsor 1 - logo", name: "sponsorImage1", widget: "image", required: false }
+          - { label: "Sponsor 2 - nom", name: "sponsor2", widget: "string", required: false }
+          - { label: "Sponsor 2 - logo", name: "sponsorImage2", widget: "image", required: false }
+          - { label: "Sponsor 3 - nom", name: "sponsor3", widget: "string", required: false }
+          - { label: "Sponsor 3 - logo", name: "sponsorImage3", widget: "image", required: false }
+          - { label: "Sponsor 4 - nom", name: "sponsor4", widget: "string", required: false }
+          - { label: "Sponsor 4 - logo", name: "sponsorImage4", widget: "image", required: false }
+

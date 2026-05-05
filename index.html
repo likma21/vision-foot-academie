@@ -1,0 +1,1760 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vision Foot Académie | Stages, entraînements spécifiques et tournois</title>
+  <meta name="description" content="Vision Foot Académie organise des stages de football, entraînements spécifiques et tournois pour toutes les catégories.">
+  <style>
+    :root {
+      --navy: #071126;
+      --navy-2: #101b35;
+      --orange: #e97922;
+      --orange-dark: #bd5411;
+      --yellow: #f7d326;
+      --white: #ffffff;
+      --paper: #f6f7fb;
+      --ink: #131927;
+      --muted: #647086;
+      --line: #dce2ee;
+      --radius: 8px;
+      --shadow: 0 20px 50px rgba(7, 17, 38, .18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: rgba(255, 255, 255, .86);
+      font-size: 14px;
+    }
+
+    .topbar .wrap {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .topbar strong {
+      color: var(--yellow);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255, 255, 255, .96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav .wrap {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .brand img {
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #33405a;
+    }
+
+    .menu a:hover {
+      color: var(--orange);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 18px;
+      border: 0;
+      border-radius: var(--radius);
+      background: var(--orange);
+      color: #fff;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 12px 24px rgba(233, 121, 34, .26);
+    }
+
+    .btn:hover {
+      background: var(--orange-dark);
+    }
+
+    .btn.secondary {
+      background: #fff;
+      color: var(--navy);
+      border: 1px solid rgba(255, 255, 255, .72);
+      box-shadow: none;
+    }
+
+    .btn.dark {
+      background: var(--navy);
+      box-shadow: none;
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: 700px;
+      display: grid;
+      align-items: end;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(7, 17, 38, .94), rgba(7, 17, 38, .66) 50%, rgba(7, 17, 38, .18)),
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=2200&q=82") center / cover;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--orange), var(--yellow), var(--orange));
+      z-index: -1;
+    }
+
+    .hero .wrap {
+      padding: 92px 0 48px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 40px;
+      align-items: end;
+    }
+
+    .hero-logo {
+      width: min(280px, 70vw);
+      margin-left: auto;
+      filter: drop-shadow(0 25px 35px rgba(0, 0, 0, .38));
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--yellow);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 34px;
+      height: 3px;
+      background: var(--yellow);
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 18px 0 16px;
+      font-size: clamp(42px, 6vw, 82px);
+      line-height: .98;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 700px;
+      margin: 0 0 28px;
+      color: rgba(255, 255, 255, .9);
+      font-size: clamp(18px, 2vw, 22px);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 38px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: rgba(255, 255, 255, .95);
+      color: var(--ink);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .stat {
+      padding: 20px;
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--orange);
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    section {
+      padding: 76px 0;
+      background: #fff;
+    }
+
+    section.alt {
+      background: var(--paper);
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin: 8px 0 12px;
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 22px;
+      line-height: 1.18;
+    }
+
+    p {
+      margin: 0 0 15px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 28px rgba(7, 17, 38, .07);
+    }
+
+    .service {
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .service img {
+      height: 176px;
+      object-fit: cover;
+    }
+
+    .service .body {
+      padding: 22px;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(233, 121, 34, .12);
+      color: var(--orange-dark);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 20px 0 0;
+      list-style: none;
+    }
+
+    .list li {
+      display: flex;
+      gap: 10px;
+      color: #33405a;
+    }
+
+    .list li::before {
+      content: "";
+      flex: 0 0 10px;
+      height: 10px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--yellow);
+      box-shadow: 0 0 0 4px rgba(247, 211, 38, .24);
+    }
+
+    .feature-photo img {
+      height: 430px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .band {
+      background: var(--navy);
+      color: #fff;
+      padding: 68px 0;
+    }
+
+    .band h2,
+    .band h3 {
+      color: #fff;
+    }
+
+    .band .muted {
+      color: rgba(255, 255, 255, .76);
+    }
+
+    .programs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .programs a.card {
+      color: inherit;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .programs a.card:hover {
+      transform: translateY(-4px);
+      border-color: var(--orange);
+      box-shadow: var(--shadow);
+    }
+
+    .price {
+      font-size: 32px;
+      color: var(--orange);
+      font-weight: 900;
+      margin: 14px 0 2px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .highlight {
+      border: 2px solid var(--orange);
+    }
+
+    .events {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .events .card {
+      min-height: 230px;
+      border-top: 5px solid var(--orange);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .events .card::after {
+      content: "";
+      position: absolute;
+      right: -28px;
+      bottom: -28px;
+      width: 92px;
+      height: 92px;
+      border: 12px solid rgba(247, 211, 38, .24);
+      border-radius: 50%;
+    }
+
+    .event-date {
+      display: inline-grid;
+      place-items: center;
+      width: 64px;
+      height: 64px;
+      margin-bottom: 18px;
+      border-radius: var(--radius);
+      background: var(--navy);
+      color: #fff;
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .event-date span {
+      display: block;
+      color: var(--yellow);
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .tournament-cta {
+      margin-top: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 22px;
+      border-radius: var(--radius);
+      background: var(--navy);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .tournament-cta p {
+      margin: 0;
+      color: rgba(255, 255, 255, .82);
+      font-weight: 800;
+    }
+
+    .contact {
+      background: #000;
+      color: #fff;
+    }
+
+    .contact h2 {
+      color: #fff;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .contact-box {
+      margin-top: 24px;
+      color: #fff;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .stage-showcase {
+      display: grid;
+      gap: 22px;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .stage-showcase .mini-logo {
+      width: 92px;
+      height: 92px;
+      object-fit: contain;
+    }
+
+    .stage-posters {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      width: 100%;
+      max-width: 430px;
+    }
+
+    .poster {
+      min-height: 172px;
+      display: grid;
+      align-content: end;
+      padding: 14px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(7, 17, 38, .16), rgba(7, 17, 38, .92)),
+        url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=82") center / cover;
+      box-shadow: 0 18px 35px rgba(0, 0, 0, .42);
+      border: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .poster:nth-child(2) {
+      background:
+        linear-gradient(180deg, rgba(7, 17, 38, .16), rgba(7, 17, 38, .92)),
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=82") center / cover;
+    }
+
+    .poster:nth-child(3) {
+      background:
+        linear-gradient(180deg, rgba(7, 17, 38, .16), rgba(7, 17, 38, .92)),
+        url("https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=900&q=82") center / cover;
+    }
+
+    .poster:nth-child(4) {
+      background:
+        linear-gradient(180deg, rgba(7, 17, 38, .16), rgba(7, 17, 38, .92)),
+        url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=82") center / cover;
+    }
+
+    .poster strong {
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .stage-checks {
+      display: grid;
+      gap: 10px;
+      margin: 22px 0;
+      padding: 0;
+      list-style: none;
+      text-align: left;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .stage-checks li::before {
+      content: "✓";
+      display: inline-grid;
+      place-items: center;
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      background: #24d87c;
+      color: #fff;
+      font-size: 12px;
+      border-radius: 2px;
+    }
+
+    form {
+      background: transparent;
+      color: #fff;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 900;
+      font-size: 13px;
+      color: #fff;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 44px;
+      margin-bottom: 14px;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 112px;
+      resize: vertical;
+    }
+
+    .form-note {
+      margin-top: 12px;
+      color: rgba(255, 255, 255, .72);
+      font-size: 14px;
+    }
+
+    .registration-title {
+      margin: 0 0 24px;
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px 20px;
+    }
+
+    .form-grid .wide {
+      grid-column: 1 / -1;
+    }
+
+    .form-grid .thirds {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      grid-column: 1 / -1;
+    }
+
+    .checkline {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin: 13px 0;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .checkline input {
+      width: auto;
+      min-height: auto;
+      margin: 3px 0 0;
+    }
+
+    .tournament-registration {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .tournament-registration h2 {
+      color: #fff;
+    }
+
+    .tournament-form-shell {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .06);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 18px;
+    }
+
+    .media-card {
+      min-height: 230px;
+      position: relative;
+      display: grid;
+      align-content: end;
+      overflow: hidden;
+      padding: 18px;
+      border-radius: var(--radius);
+      color: #fff;
+      background:
+        linear-gradient(180deg, rgba(7, 17, 38, .05), rgba(7, 17, 38, .88)),
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200&q=82") center / cover;
+      box-shadow: var(--shadow);
+    }
+
+    .media-card.large {
+      min-height: 480px;
+      grid-row: span 2;
+    }
+
+    .media-card:nth-child(2) {
+      background:
+        linear-gradient(180deg, rgba(7, 17, 38, .05), rgba(7, 17, 38, .88)),
+        url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=82") center / cover;
+    }
+
+    .media-card:nth-child(3) {
+      background:
+        linear-gradient(180deg, rgba(7, 17, 38, .05), rgba(7, 17, 38, .88)),
+        url("https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=1000&q=82") center / cover;
+    }
+
+    .media-card:nth-child(4) {
+      background:
+        linear-gradient(180deg, rgba(7, 17, 38, .05), rgba(7, 17, 38, .88)),
+        url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=82") center / cover;
+    }
+
+    .play {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--orange);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .news-card {
+      display: grid;
+      gap: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 10px 28px rgba(7, 17, 38, .07);
+    }
+
+    .avatar {
+      width: 78px;
+      height: 78px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--yellow);
+    }
+
+    .social-zone {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .social-zone h2,
+    .sponsors h2 {
+      color: #fff;
+    }
+
+    .social-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .social-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-height: 118px;
+      padding: 22px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .social-card svg {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+    }
+
+    .social-card strong {
+      display: block;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .social-card span {
+      color: rgba(255, 255, 255, .72);
+      font-size: 14px;
+    }
+
+    .sponsors {
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: #fff;
+    }
+
+    .sponsor-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .sponsor-card {
+      min-height: 118px;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--navy);
+      font-weight: 900;
+      text-align: center;
+      border-bottom: 5px solid var(--orange);
+    }
+
+    .sponsor-card img {
+      max-width: 100%;
+      max-height: 76px;
+      object-fit: contain;
+    }
+
+    .contact-clean {
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .contact-clean h2 {
+      color: var(--navy);
+    }
+
+    .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .contact-method {
+      padding: 24px;
+      border-radius: var(--radius);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 28px rgba(7, 17, 38, .06);
+    }
+
+    .contact-method strong {
+      display: block;
+      color: var(--orange);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .contact-method a {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--navy);
+      overflow-wrap: anywhere;
+    }
+
+    .contact-method .contact-value {
+      display: inline-block;
+      margin-top: 4px;
+      color: var(--navy);
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-method .contact-value:hover {
+      color: var(--orange);
+    }
+
+    .contact-method .btn {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    footer {
+      padding: 28px 0;
+      background: #030713;
+      color: rgba(255, 255, 255, .72);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 940px) {
+      .menu {
+        display: none;
+      }
+
+      .hero {
+        min-height: 760px;
+        background:
+          linear-gradient(180deg, rgba(7, 17, 38, .92), rgba(7, 17, 38, .62)),
+          url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200&q=82") center / cover;
+      }
+
+      .hero-grid,
+      .stats,
+      .grid-2,
+      .grid-3,
+      .programs,
+      .events,
+      .contact-panel,
+      .form-grid,
+      .form-grid .thirds,
+      .gallery-grid,
+      .news-grid,
+      .social-links,
+      .sponsor-grid,
+      .contact-methods {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-logo {
+        margin: 0;
+        width: 190px;
+      }
+
+      .stat {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .feature-photo img {
+        height: 300px;
+      }
+
+      .media-card.large,
+      .media-card {
+        min-height: 280px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrap {
+        width: min(100% - 22px, 1180px);
+      }
+
+      .topbar .wrap {
+        justify-content: center;
+        text-align: center;
+        padding: 8px 0;
+      }
+
+      .nav .wrap {
+        min-height: 68px;
+      }
+
+      .brand img {
+        width: 52px;
+        height: 52px;
+      }
+
+      .brand span {
+        max-width: 170px;
+        line-height: 1.05;
+      }
+
+      .nav .btn {
+        display: none;
+      }
+
+      .hero .wrap {
+        padding-top: 54px;
+      }
+
+      .hero-actions .btn,
+      form .btn {
+        width: 100%;
+      }
+
+      section {
+        padding: 54px 0;
+      }
+
+      .card,
+      form,
+      .contact-box,
+      .tournament-form-shell {
+        padding: 20px;
+      }
+
+      form {
+        padding: 0;
+      }
+
+      .stage-posters {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <span><strong>Vision Foot Académie</strong> | Stages, entraînements spécifiques, tournois</span>
+      <span>0033609602556 / 0033658162038 / 33768836304 | visionfootacademie@gmail.com</span>
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="wrap">
+      <a class="brand" href="#accueil" aria-label="Vision Foot Académie">
+        <img src="assets/vision-foot-logo.png" alt="Logo Vision Foot Académie">
+        <span>Vision Foot Académie</span>
+      </a>
+      <div class="menu">
+        <a href="#services">Offres</a>
+        <a href="#entrainements">Entraînements</a>
+        <a href="#stages">Stages</a>
+        <a href="#tournois">Tournois</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#actualites">Actualités</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn" href="#contact">S'inscrire</a>
+    </div>
+  </nav>
+
+  <header id="accueil" class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="kicker">Académie de football toutes catégories</span>
+          <h1>Stages, entraînements spécifiques et tournois pour progresser vraiment.</h1>
+          <p class="lead">Vision Foot Académie accompagne les joueurs et joueuses avec des séances exigeantes, des stages intensifs et des événements football pensés pour chaque âge, chaque poste et chaque objectif.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#contact">Réserver une place</a>
+            <a class="btn secondary" href="#services">Voir les programmes</a>
+          </div>
+        </div>
+        <img class="hero-logo" src="assets/vision-foot-logo.png" alt="Logo Vision Foot Académie">
+      </div>
+      <div class="stats" aria-label="Chiffres clés">
+        <div class="stat"><strong>U6-U18</strong><span>Toutes catégories jeunes</span></div>
+        <div class="stat"><strong>Stages</strong><span>Vacances et week-ends</span></div>
+        <div class="stat"><strong>Spécifique</strong><span>Technique, poste, gardien</span></div>
+        <div class="stat"><strong>Tournois</strong><span>Événements toute saison</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Nos offres</span>
+        <h2>Un seul objectif : faire progresser les joueurs sur le terrain.</h2>
+        <p class="muted">La VFA n’est pas une école classique. C’est une académie football centrée sur la pratique, l’intensité, la répétition technique, la confiance et le plaisir de jouer.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card service">
+          <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=82" alt="Stage de football jeunes">
+          <div class="body">
+            <span class="tag">Vacances</span>
+            <h3>Stages de football</h3>
+            <p class="muted">Des stages intensifs pendant les vacances pour travailler la technique, le jeu, la finition et l’attitude.</p>
+          </div>
+        </article>
+        <article class="card service">
+          <img src="https://images.unsplash.com/photo-1600679472829-3044539ce8ed?auto=format&fit=crop&w=1000&q=82" alt="Entraînement spécifique football">
+          <div class="body">
+            <span class="tag">Progression</span>
+            <h3>Entraînements spécifiques</h3>
+            <p class="muted">Séances par poste, technique individuelle, vitesse, motricité, gardiens, finition et duels.</p>
+          </div>
+        </article>
+        <article class="card service">
+          <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=82" alt="Tournoi de football">
+          <div class="body">
+            <span class="tag">Compétition</span>
+            <h3>Tournois toutes catégories</h3>
+            <p class="muted">Organisation de tournois U6 à U18, challenges, plateaux, événements clubs et journées foot.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="entrainements" class="alt">
+    <div class="wrap grid-2">
+      <div>
+        <span class="kicker">Entraînements spécifiques</span>
+        <h2>Des séances ciblées pour corriger, répéter et gagner en confiance.</h2>
+        <p>Chaque séance est construite autour d’un objectif clair. Le joueur repart avec des repères simples, des exercices précis et une meilleure lecture de ses qualités.</p>
+        <ul class="list">
+          <li>Technique individuelle : conduite, passe, contrôle orienté, dribble, finition.</li>
+          <li>Spécifique par poste : attaquant, milieu, défenseur, gardien de but.</li>
+          <li>Coordination, appuis, vitesse, explosivité et changements de direction.</li>
+          <li>Petits groupes pour garder un maximum de répétitions et de corrections.</li>
+        </ul>
+      </div>
+      <div class="feature-photo">
+        <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=1300&q=82" alt="Jeune joueur en séance spécifique">
+      </div>
+    </div>
+  </section>
+
+  <section id="stages">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Stages VFA</span>
+        <h2>Des stages pour revenir plus fort à chaque période clé de la saison.</h2>
+        <p class="muted">Pendant les vacances ou en séances spécifiques, chaque joueur travaille avec intensité, prend confiance et repart avec des repères concrets pour progresser en club.</p>
+      </div>
+      <div class="programs" id="programCards">
+        <a class="card" href="#inscription-stage" aria-label="S'inscrire au stage hiver">
+          <span class="tag">Découverte</span>
+          <h3>Stage hiver</h3>
+          <p class="muted">Un stage intense pour garder le rythme, renforcer les bases techniques et préparer la reprise.</p>
+          <div class="price">40€</div>
+          <p class="small">à partir de la journée</p>
+          <ul class="list">
+            <li>2 séances terrain</li>
+            <li>Ateliers techniques</li>
+            <li>Défis et matchs</li>
+          </ul>
+        </a>
+        <a class="card highlight" href="#inscription-stage" aria-label="S'inscrire au stage d'été">
+          <span class="tag">Populaire</span>
+          <h3>Stage d'été</h3>
+          <p class="muted">Le grand rendez-vous vacances pour progresser, jouer, performer et vivre une vraie semaine football.</p>
+          <div class="price">180€</div>
+          <p class="small">du lundi au vendredi</p>
+          <ul class="list">
+            <li>Technique et motricité</li>
+            <li>Tournoi de fin de stage</li>
+            <li>Bilan joueur</li>
+          </ul>
+        </a>
+        <a class="card" href="#inscription-stage" aria-label="S'inscrire aux séances spécifiques">
+          <span class="tag">Spécifiques</span>
+          <h3>Séances spécifiques</h3>
+          <p class="muted">Un accompagnement ciblé pour progresser sur un point précis : poste, technique, vitesse ou finition.</p>
+          <div class="price">120€ / 220€</div>
+          <p class="small">pack 5 séances / pack 10 séances</p>
+          <ul class="list">
+            <li>Pack 5 séances : 120€</li>
+            <li>Pack 10 séances : 220€</li>
+            <li>Suivi progression</li>
+          </ul>
+        </a>
+      </div>
+      <div style="margin-top: 26px; text-align: center;">
+        <a class="btn" href="#inscription-stage">S'inscrire au stage</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="inscription-stage" class="contact">
+    <div class="wrap contact-panel">
+      <div class="stage-showcase">
+        <img class="mini-logo" src="assets/vision-foot-logo.png" alt="Logo Vision Foot Académie">
+        <h2>Inscription aux stages VFA</h2>
+        <div class="stage-posters" aria-label="Visuels de stages Vision Foot Académie">
+          <div class="poster"><strong>Stage hiver</strong></div>
+          <div class="poster"><strong>Stage d'été</strong></div>
+          <div class="poster"><strong>Spécifique poste</strong></div>
+          <div class="poster"><strong>Tournoi final</strong></div>
+        </div>
+        <div class="contact-box">
+          <p><strong>Stages et séances spécifiques</strong></p>
+          <ul class="stage-checks">
+            <li>Stage hiver et stage d'été</li>
+            <li>Pack 5 séances spécifiques : 120€</li>
+            <li>Pack 10 séances spécifiques : 220€</li>
+            <li>Places limitées par catégorie</li>
+          </ul>
+          <p><strong>Infos rapides :</strong><br><a href="https://wa.me/33768836404?text=Bonjour%20Vision%20Foot%20Acad%C3%A9mie%2C%20je%20souhaite%20des%20informations%20pour%20un%20stage." target="_blank" rel="noopener">WhatsApp 07 68 83 64 04</a></p>
+        </div>
+      </div>
+      <form id="stageForm" name="inscription-stage" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="inscription-stage">
+        <p style="display:none;"><label>Ne pas remplir <input name="bot-field"></label></p>
+        <h2 class="registration-title">Formulaire d'inscription stage</h2>
+        <input type="hidden" name="demande" value="Stage football">
+
+        <div class="form-grid">
+          <div>
+            <label for="stage_pere">Nom et prénom du père*</label>
+            <input id="stage_pere" name="pere" type="text" required>
+          </div>
+          <div>
+            <label for="stage_profession_pere">Profession*</label>
+            <input id="stage_profession_pere" name="profession_pere" type="text" required>
+          </div>
+          <div>
+            <label for="stage_mere">Nom et prénom de la mère*</label>
+            <input id="stage_mere" name="mere" type="text" required>
+          </div>
+          <div>
+            <label for="stage_profession_mere">Profession*</label>
+            <input id="stage_profession_mere" name="profession_mere" type="text" required>
+          </div>
+
+          <div class="thirds">
+            <div>
+              <label for="stage_prenom_enfant">Prénom de l'enfant*</label>
+              <input id="stage_prenom_enfant" name="prenom_enfant" type="text" required>
+            </div>
+            <div>
+              <label for="stage_nom_enfant">Nom de l'enfant*</label>
+              <input id="stage_nom_enfant" name="nom_enfant" type="text" required>
+            </div>
+            <div>
+              <label for="stage_naissance">Date de naissance*</label>
+              <input id="stage_naissance" name="naissance" type="date" required>
+            </div>
+          </div>
+
+          <div>
+            <label for="stage_email">Email*</label>
+            <input id="stage_email" name="email" type="email" required>
+          </div>
+          <div>
+            <label for="stage_telephone">Numéro de téléphone*</label>
+            <input id="stage_telephone" name="telephone" type="tel" required>
+          </div>
+
+          <div>
+            <label for="stage_club">Nom de votre club*</label>
+            <input id="stage_club" name="club" type="text" required>
+          </div>
+          <div>
+            <label for="stage_categorie">Catégorie*</label>
+            <select id="stage_categorie" name="categorie" required>
+              <option value="">Veuillez sélectionner</option>
+              <option>U6-U7</option>
+              <option>U8-U9</option>
+              <option>U10-U11</option>
+              <option>U12-U13</option>
+              <option>U14-U15</option>
+              <option>U16-U18</option>
+              <option>Séniors</option>
+            </select>
+          </div>
+
+          <div class="wide">
+            <label for="stage_position">Position sur le terrain*</label>
+            <select id="stage_position" name="position" required>
+              <option value="">Veuillez sélectionner</option>
+              <option>Gardien</option>
+              <option>Défenseur</option>
+              <option>Milieu</option>
+              <option>Attaquant</option>
+              <option>Polyvalent</option>
+            </select>
+          </div>
+
+          <div class="wide">
+            <label for="stage_session">Formule choisie*</label>
+            <select id="stage_session" name="session" required>
+              <option value="">Choisir une formule</option>
+              <option>Stage hiver</option>
+              <option>Stage d'été</option>
+              <option>Spécifiques - pack 5 séances : 120€</option>
+              <option>Spécifiques - pack 10 séances : 220€</option>
+            </select>
+          </div>
+
+          <div class="wide">
+            <label for="stage_paiement">Mode de paiement*</label>
+            <select id="stage_paiement" name="paiement" required>
+              <option>Espèces</option>
+              <option>Virement</option>
+              <option>Chèque</option>
+            </select>
+          </div>
+
+          <div class="wide">
+            <label for="stage_sante">Santé - allergies*</label>
+            <textarea id="stage_sante" name="sante" placeholder="Problèmes de santé, allergies alimentaires ou autres..." required></textarea>
+          </div>
+
+          <div class="wide">
+            <label for="stage_source">Comment nous avez-vous connu ?*</label>
+            <select id="stage_source" name="source" required>
+              <option>Instagram</option>
+              <option>Facebook</option>
+              <option>TikTok</option>
+              <option>Bouche à oreille</option>
+              <option>Club</option>
+              <option>Google</option>
+              <option>Autre</option>
+            </select>
+          </div>
+        </div>
+
+        <label class="checkline">
+          <input type="checkbox" name="autorisation_sante" required>
+          J'autorise Vision Foot Académie à confier le stagiaire aux professionnels de santé compétents en cas d'accident ou de maladie nécessitant une prise en charge rapide.*
+        </label>
+        <label class="checkline">
+          <input type="checkbox" name="autorisation_image" required>
+          J'autorise Vision Foot Académie à prendre des photos et vidéos de mon enfant à des fins de communication liées aux stages.*
+        </label>
+        <label class="checkline">
+          <input type="checkbox" name="conditions" required>
+          J'ai lu et j'accepte les conditions d'inscription.*
+        </label>
+
+        <div style="text-align: center; margin-top: 24px;">
+          <button class="btn" type="submit">Soumettre</button>
+        </div>
+        <p class="form-note" id="stageNote">Votre inscription sera enregistrée. Vision Foot Académie vous recontactera pour confirmer.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap grid-3">
+      <article>
+        <h3>Technique</h3>
+        <p class="muted">Beaucoup de ballon, beaucoup de répétitions, des corrections simples et directes.</p>
+      </article>
+      <article>
+        <h3>Intensité</h3>
+        <p class="muted">Des séances rythmées, adaptées à l’âge, pour habituer les joueurs à faire les bons gestes vite.</p>
+      </article>
+      <article>
+        <h3>Confiance</h3>
+        <p class="muted">Un cadre positif, exigeant et motivant pour oser, rater, recommencer et progresser.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="tournois" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Tournois et événements</span>
+        <h2>Des tournois où chaque équipe vient vivre son grand moment.</h2>
+        <p class="muted">Ambiance, intensité, respect, récompenses, photos, finales et souvenirs : Vision Foot Académie veut créer des journées qui restent dans la tête des joueurs, des éducateurs et des familles.</p>
+      </div>
+      <div class="events" id="eventCards">
+        <article class="card">
+          <div class="event-date">15<span>juin</span></div>
+          <h3>Vision Foot Challenge</h3>
+          <p class="muted">Un tournoi rythmé pour les jeunes catégories, avec matchs courts, classement, défis techniques et remise de trophées.</p>
+        </article>
+        <article class="card">
+          <div class="event-date">22<span>juin</span></div>
+          <h3>VFA Cup</h3>
+          <p class="muted">Une vraie journée compétition : poules, phases finales, prix individuels, photos d’équipe et ambiance tournoi.</p>
+        </article>
+        <article class="card">
+          <div class="event-date">06<span>juil</span></div>
+          <h3>Tournoi des étoiles</h3>
+          <p class="muted">Un événement festif pour finir la saison avec des matchs, animations, récompenses et une belle expérience pour les familles.</p>
+        </article>
+      </div>
+      <div class="tournament-cta">
+        <p>Ton équipe veut participer au prochain tournoi VFA ?</p>
+        <a class="btn" href="#inscription-tournoi">Inscription tournoi</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="inscription-tournoi" class="tournament-registration">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Inscription club</span>
+        <h2>Inscris ton équipe au prochain tournoi Vision Foot Académie.</h2>
+        <p class="muted">Remplis la fiche avec les informations du club, de l’équipe et du référent pour préparer votre participation au tournoi.</p>
+      </div>
+      <div class="tournament-form-shell">
+        <form id="tournamentForm" name="inscription-tournoi" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="inscription-tournoi">
+          <p style="display:none;"><label>Ne pas remplir <input name="bot-field"></label></p>
+          <div class="form-grid">
+            <div>
+              <label for="teamName">Nom de l'équipe*</label>
+              <input id="teamName" name="teamName" type="text" required>
+            </div>
+            <div>
+              <label for="teamCount">Nombre d'équipe(s)*</label>
+              <input id="teamCount" name="teamCount" type="number" min="1" value="1" required>
+            </div>
+            <div class="wide">
+              <label for="teamAddress">Adresse de l'équipe / du club*</label>
+              <input id="teamAddress" name="teamAddress" type="text" required>
+            </div>
+            <div>
+              <label for="teamCategory">Catégorie*</label>
+              <select id="teamCategory" name="teamCategory" required>
+                <option value="">Veuillez sélectionner</option>
+                <option>U6 garçons</option>
+                <option>U6 filles</option>
+                <option>U7 garçons</option>
+                <option>U7 filles</option>
+                <option>U8 garçons</option>
+                <option>U8 filles</option>
+                <option>U9 garçons</option>
+                <option>U9 filles</option>
+                <option>U10 garçons</option>
+                <option>U10 filles</option>
+                <option>U11 garçons</option>
+                <option>U11 filles</option>
+                <option>U12 garçons</option>
+                <option>U12 filles</option>
+                <option>U13 garçons</option>
+                <option>U13 filles</option>
+                <option>U14 garçons</option>
+                <option>U14 filles</option>
+              </select>
+            </div>
+            <div>
+              <label for="referentName">Nom de l'éducateur ou référent*</label>
+              <input id="referentName" name="referentName" type="text" required>
+            </div>
+            <div>
+              <label for="referentPhone">Numéro*</label>
+              <input id="referentPhone" name="referentPhone" type="tel" required>
+            </div>
+            <div>
+              <label for="referentEmail">Adresse mail*</label>
+              <input id="referentEmail" name="referentEmail" type="email" required>
+            </div>
+            <div class="wide">
+              <label for="tournamentPayment">Paiement*</label>
+              <select id="tournamentPayment" name="tournamentPayment" required>
+                <option>Espèces</option>
+                <option>Virement</option>
+                <option>Chèque</option>
+              </select>
+            </div>
+            <div class="wide">
+              <label for="tournamentMessage">Message ou précision</label>
+              <textarea id="tournamentMessage" name="tournamentMessage" placeholder="Nombre de joueurs, disponibilité, catégorie exacte, remarques..."></textarea>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 24px;">
+            <button class="btn" type="submit">Envoyer l'inscription tournoi</button>
+          </div>
+          <p class="form-note" id="tournamentNote">Après validation, Vision Foot Académie vous contactera pour confirmer la place et le règlement.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Galerie</span>
+        <h2>Nos photos, nos vidéos, nos meilleurs moments.</h2>
+        <p class="muted" id="galleryIntro">Plonge dans l’ambiance Vision Foot Académie : intensité des séances, sourires des joueurs, finales de tournois et moments qui donnent envie de rejoindre le prochain rassemblement.</p>
+      </div>
+      <div class="gallery-grid">
+        <article class="media-card large">
+          <span class="tag">Photo</span>
+          <h3 id="galleryTitle1">Stage Vision Foot Académie</h3>
+          <p id="galleryText1">Technique, intensité et plaisir de jouer.</p>
+        </article>
+        <article class="media-card">
+          <span class="play">▶</span>
+          <span class="tag">Vidéo</span>
+          <h3 id="galleryTitle2">Extrait entraînement</h3>
+        </article>
+        <article class="media-card">
+          <span class="tag">Photo</span>
+          <h3 id="galleryTitle3">Tournoi VFA</h3>
+        </article>
+        <article class="media-card">
+          <span class="play">▶</span>
+          <span class="tag">Vidéo</span>
+          <h3 id="galleryTitle4">Ambiance terrain</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="actualites" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Actualités</span>
+        <h2>Le parcours et les nouvelles de nos anciens académiciens.</h2>
+        <p class="muted" id="newsIntro">Retrouve les progrès, les réussites, les essais, les sélections et les moments forts des joueurs passés par Vision Foot Académie.</p>
+      </div>
+      <div class="news-grid">
+        <article class="news-card">
+          <img class="avatar" src="assets/vision-foot-logo.png" alt="Ancien académicien à remplacer">
+          <span class="tag">Parcours</span>
+          <h3 id="newsTitle1">Un ancien VFA rejoint un nouveau projet</h3>
+          <p class="muted" id="newsText1">Son histoire, son club, son évolution et ce que l’académie lui a apporté.</p>
+        </article>
+        <article class="news-card">
+          <img class="avatar" src="assets/vision-foot-logo.png" alt="Actualité joueur à remplacer">
+          <span class="tag">Actualité</span>
+          <h3 id="newsTitle2">Sélection, essai ou tournoi réussi</h3>
+          <p class="muted" id="newsText2">Une bonne nouvelle à partager pour valoriser les jeunes et leur progression.</p>
+        </article>
+        <article class="news-card">
+          <img class="avatar" src="assets/vision-foot-logo.png" alt="Témoignage à remplacer">
+          <span class="tag">Témoignage</span>
+          <h3 id="newsTitle3">La parole aux académiciens</h3>
+          <p class="muted" id="newsText3">Une citation, une photo et le parcours du joueur ou de la famille.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="reseaux" class="social-zone">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Réseaux sociaux</span>
+        <h2>Suis Vision Foot Académie au plus près du terrain.</h2>
+        <p class="muted" id="socialIntro">Rejoins la communauté VFA, suis les coulisses des stages, les vidéos terrain et les prochains tournois.</p>
+      </div>
+      <div class="social-links">
+        <a class="social-card" id="facebookLink" href="#" aria-label="Facebook Vision Foot Académie">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#1877f2"/><path fill="#fff" d="M28.6 25.5h-3.1v10.3h-4.3V25.5h-2.3v-3.7h2.3v-2.4c0-3 1.8-4.8 4.7-4.8 1.4 0 2.8.2 2.8.2v3.1h-1.6c-1.5 0-1.9.9-1.9 1.9v2h3.4l-.5 3.7Z"/></svg>
+          <div><strong>Facebook</strong><span>Ajouter le lien de la page</span></div>
+        </a>
+        <a class="social-card" id="instagramLink" href="#" aria-label="Instagram Vision Foot Académie">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="ig" x1="8" x2="40" y1="40" y2="8"><stop stop-color="#feda75"/><stop offset=".35" stop-color="#fa7e1e"/><stop offset=".7" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="7" y="7" width="34" height="34" rx="10" fill="url(#ig)"/><circle cx="24" cy="24" r="8" fill="none" stroke="#fff" stroke-width="3"/><circle cx="34" cy="14" r="2.4" fill="#fff"/></svg>
+          <div><strong>Instagram</strong><span>Ajouter le lien du profil</span></div>
+        </a>
+        <a class="social-card" id="tiktokLink" href="#" aria-label="TikTok Vision Foot Académie">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#050505"/><path fill="#25f4ee" d="M27 13c1 3.8 3.2 6 6.8 6.4v4.1c-2.4 0-4.5-.7-6.5-2.1v9.1c0 5-3.5 8.5-8.3 8.5-4.2 0-7.6-3-7.6-7.2 0-4.7 3.9-7.9 8.5-7.2v4.3c-2.1-.6-4.1.7-4.1 2.8 0 1.8 1.4 3 3.1 3 2 0 3.5-1.4 3.5-4V13H27Z"/><path fill="#fe2c55" d="M29.2 13c1 3.1 3 4.8 6.1 5.3v4.1c-2.2-.1-4.2-.8-6.1-2.1v9.2c0 5-3.5 8.5-8.3 8.5-2.1 0-4-.8-5.4-2.1 1.2.7 2.6 1.1 4.1 1.1 4.8 0 8.3-3.5 8.3-8.5V13h1.3Z"/></svg>
+          <div><strong>TikTok</strong><span>Ajouter le lien du compte</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sponsors" class="sponsors">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Sponsors</span>
+        <h2>Ils nous font confiance, ils font grandir le football de demain.</h2>
+        <p class="muted">Associer votre marque à Vision Foot Académie, c’est soutenir la progression des jeunes, la passion du terrain et des événements qui rassemblent les familles, les clubs et les éducateurs.</p>
+      </div>
+      <div class="sponsor-grid">
+        <div class="sponsor-card" id="sponsor1">Sponsor 1</div>
+        <div class="sponsor-card" id="sponsor2">Sponsor 2</div>
+        <div class="sponsor-card" id="sponsor3">Sponsor 3</div>
+        <div class="sponsor-card" id="sponsor4">Votre logo ici</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-clean">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Contact</span>
+        <h2>Une question, une inscription, un partenariat ? Contacte-nous directement.</h2>
+        <p class="muted">Vision Foot Académie répond aux familles, clubs, éducateurs et partenaires pour les stages, entraînements spécifiques, tournois et collaborations.</p>
+      </div>
+      <div class="contact-methods">
+        <article class="contact-method">
+          <strong>Email</strong>
+          <a class="contact-value" href="mailto:visionfootacademie@gmail.com">visionfootacademie@gmail.com</a>
+        </article>
+        <article class="contact-method">
+          <strong>Téléphones</strong>
+          <a class="contact-value" href="tel:+33609602556">0033609602556</a><br>
+          <a class="contact-value" href="tel:+33658162038">0033658162038</a><br>
+          <a class="contact-value" href="tel:+33768836304">33768836304</a>
+        </article>
+        <article class="contact-method">
+          <strong>Adresse</strong>
+          <a class="contact-value" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=COMPLEXE%20FERNAND%20FOURNIER%20POLE%20SPORTIF%20Avenue%20Joseph%20Imbert%2013200%20Arles">COMPLEXE FERNAND FOURNIER POLE SPORTIF<br>Avenue Joseph Imbert<br>13200 Arles</a>
+        </article>
+        <article class="contact-method">
+          <strong>Disponibilité</strong>
+          <p class="muted">Stages, tournois, entraînements spécifiques, partenariats clubs et sponsors.</p>
+          <a class="btn" target="_blank" rel="noopener" href="https://wa.me/33768836404?text=Bonjour%20Vision%20Foot%20Acad%C3%A9mie%2C%20je%20souhaite%20avoir%20des%20informations.">Nous écrire sur WhatsApp</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>Vision Foot Académie. Tous droits réservés.</span>
+      <span>Stages | Entraînements spécifiques | Tournois | Galerie | Actualités</span>
+    </div>
+  </footer>
+
+  <script>
+    const stageForm = document.querySelector("#stageForm");
+    const tournamentForm = document.querySelector("#tournamentForm");
+    const stageNote = document.querySelector("#stageNote");
+    const tournamentNote = document.querySelector("#tournamentNote");
+
+    function readStore(key, fallback) {
+      try {
+        return JSON.parse(localStorage.getItem(key)) || fallback;
+      } catch {
+        return fallback;
+      }
+    }
+
+    function saveLead(lead) {
+      const leads = readStore("vfa_leads", []);
+      leads.unshift({ ...lead, date: new Date().toLocaleString("fr-FR") });
+      localStorage.setItem("vfa_leads", JSON.stringify(leads));
+    }
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function setText(id, value) {
+      const node = document.querySelector(`#${id}`);
+      if (node && value) node.textContent = value;
+    }
+
+    function setHref(id, value) {
+      const node = document.querySelector(`#${id}`);
+      if (node && value) {
+        node.href = value;
+        node.target = "_blank";
+        node.rel = "noopener";
+      }
+    }
+
+    function setSponsor(id, name, image) {
+      const node = document.querySelector(`#${id}`);
+      if (!node) return;
+      if (image) {
+        node.innerHTML = `<img src="${image}" alt="${escapeHtml(name || "Sponsor Vision Foot Académie")}">`;
+      } else if (name) {
+        node.textContent = name;
+      }
+    }
+
+    function applyContent(content) {
+      if (!content) return;
+      setText("galleryIntro", content.galleryIntro);
+      setText("galleryTitle1", content.galleryTitle1);
+      setText("galleryText1", content.galleryText1);
+      setText("galleryTitle2", content.galleryTitle2);
+      setText("galleryTitle3", content.galleryTitle3);
+      setText("galleryTitle4", content.galleryTitle4);
+      setText("newsIntro", content.newsIntro);
+      setText("newsTitle1", content.newsTitle1);
+      setText("newsText1", content.newsText1);
+      setText("newsTitle2", content.newsTitle2);
+      setText("newsText2", content.newsText2);
+      setText("newsTitle3", content.newsTitle3);
+      setText("newsText3", content.newsText3);
+      setText("socialIntro", content.socialIntro);
+      setHref("facebookLink", content.facebookUrl);
+      setHref("instagramLink", content.instagramUrl);
+      setHref("tiktokLink", content.tiktokUrl);
+      setSponsor("sponsor1", content.sponsor1, content.sponsorImage1);
+      setSponsor("sponsor2", content.sponsor2, content.sponsorImage2);
+      setSponsor("sponsor3", content.sponsor3, content.sponsorImage3);
+      setSponsor("sponsor4", content.sponsor4, content.sponsorImage4);
+    }
+
+    function applyAdminContent() {
+      applyContent(readStore("vfa_public_content", null));
+    }
+
+    async function loadOnlineContent() {
+      if (location.protocol === "file:") {
+        applyAdminContent();
+        return;
+      }
+      try {
+        const response = await fetch("/content/site.json", { cache: "no-store" });
+        if (response.ok) {
+          applyContent(await response.json());
+        }
+      } catch {
+        applyAdminContent();
+      }
+    }
+
+    stageForm.addEventListener("submit", (event) => {
+      if (location.protocol !== "file:") return;
+      event.preventDefault();
+      const data = Object.fromEntries(new FormData(stageForm).entries());
+      saveLead({
+        parent: data.pere || data.mere || "",
+        joueur: `${data.prenom_enfant || ""} ${data.nom_enfant || ""}`.trim(),
+        categorie: data.categorie,
+        demande: data.session || "Stage football",
+        telephone: data.telephone,
+        message: [
+          data.email ? `Email : ${data.email}` : "",
+          data.club ? `Club : ${data.club}` : "",
+          data.position ? `Poste : ${data.position}` : "",
+          data.paiement ? `Paiement : ${data.paiement}` : "",
+          data.sante ? `Santé/allergies : ${data.sante}` : "",
+          data.source ? `Source : ${data.source}` : ""
+        ].filter(Boolean).join(" | ")
+      });
+      stageForm.reset();
+      stageNote.textContent = "Inscription stage enregistrée. Vision Foot Académie vous recontactera pour confirmer.";
+    });
+
+    tournamentForm.addEventListener("submit", (event) => {
+      if (location.protocol !== "file:") return;
+      event.preventDefault();
+      const data = Object.fromEntries(new FormData(tournamentForm).entries());
+      saveLead({
+        parent: data.referentName,
+        joueur: data.teamName,
+        categorie: data.teamCategory,
+        demande: "Inscription tournoi",
+        telephone: data.referentPhone,
+        message: [
+          `Nombre d'équipe(s) : ${data.teamCount}`,
+          `Adresse : ${data.teamAddress}`,
+          `Email : ${data.referentEmail}`,
+          `Paiement : ${data.tournamentPayment}`,
+          data.tournamentMessage ? `Précision : ${data.tournamentMessage}` : ""
+        ].filter(Boolean).join(" | ")
+      });
+      tournamentForm.reset();
+      tournamentNote.textContent = "Inscription tournoi enregistrée. Vision Foot Académie vous recontactera pour confirmer.";
+    });
+
+    loadOnlineContent();
+  </script>
+</body>
+</html>
+
