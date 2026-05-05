@@ -1029,8 +1029,8 @@
 <body>
   <div class="topbar">
     <div class="wrap">
-      <span><strong>Vision Foot Académie</strong> | Stages, entraînements spécifiques, tournois</span>
-      <span>0033609602556 / 0033658162038 / 33768836304 | visionfootacademie@gmail.com</span>
+      <span id="topBrandLine"><strong>Vision Foot Académie</strong> | Stages, entraînements spécifiques, tournois</span>
+      <span id="topContactLine">0033609602556 / 0033658162038 / 33768836304 | visionfootacademie@gmail.com</span>
     </div>
   </div>
 
@@ -1038,7 +1038,7 @@
     <div class="wrap">
       <a class="brand" href="#accueil" aria-label="Vision Foot Académie">
         <img src="assets/vision-foot-logo.png" alt="Logo Vision Foot Académie">
-        <span>Vision Foot Académie</span>
+        <span id="brandText">Vision Foot Académie</span>
       </a>
       <div class="menu">
         <a href="#services">Offres</a>
@@ -1049,7 +1049,7 @@
         <a href="#actualites">Actualités</a>
         <a href="#contact">Contact</a>
       </div>
-      <a class="btn" href="#contact">S'inscrire</a>
+      <a class="btn" id="navCta" href="#contact">S'inscrire</a>
     </div>
   </nav>
 
@@ -1057,17 +1057,17 @@
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <span class="kicker">Académie de football toutes catégories</span>
-          <h1>Stages, entraînements spécifiques et tournois pour progresser vraiment.</h1>
-          <p class="lead">Vision Foot Académie accompagne les joueurs et joueuses avec des séances exigeantes, des stages intensifs et des événements football pensés pour chaque âge, chaque poste et chaque objectif.</p>
+          <span class="kicker" id="heroKicker">Académie de football toutes catégories</span>
+          <h1 id="heroTitle">Stages, entraînements spécifiques et tournois pour progresser vraiment.</h1>
+          <p class="lead" id="heroText">Vision Foot Académie accompagne les joueurs et joueuses avec des séances exigeantes, des stages intensifs et des événements football pensés pour chaque âge, chaque poste et chaque objectif.</p>
           <div class="hero-actions">
-            <a class="btn" href="#contact">Réserver une place</a>
-            <a class="btn secondary" href="#services">Voir les programmes</a>
+            <a class="btn" id="heroPrimary" href="#contact">Réserver une place</a>
+            <a class="btn secondary" id="heroSecondary" href="#services">Voir les programmes</a>
           </div>
         </div>
         <img class="hero-logo" src="assets/vision-foot-logo.png" alt="Logo Vision Foot Académie">
       </div>
-      <div class="stats" aria-label="Chiffres clés">
+      <div class="stats" id="statsGrid" aria-label="Chiffres clés">
         <div class="stat"><strong>U6-U18</strong><span>Toutes catégories jeunes</span></div>
         <div class="stat"><strong>Stages</strong><span>Vacances et week-ends</span></div>
         <div class="stat"><strong>Spécifique</strong><span>Technique, poste, gardien</span></div>
@@ -1079,11 +1079,11 @@
   <section id="services">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">Nos offres</span>
-        <h2>Un seul objectif : faire progresser les joueurs sur le terrain.</h2>
-        <p class="muted">La VFA n’est pas une école classique. C’est une académie football centrée sur la pratique, l’intensité, la répétition technique, la confiance et le plaisir de jouer.</p>
+        <span class="kicker" id="servicesKicker">Nos offres</span>
+        <h2 id="servicesTitle">Un seul objectif : faire progresser les joueurs sur le terrain.</h2>
+        <p class="muted" id="servicesText">La VFA n’est pas une école classique. C’est une académie football centrée sur la pratique, l’intensité, la répétition technique, la confiance et le plaisir de jouer.</p>
       </div>
-      <div class="grid-3">
+      <div class="grid-3" id="servicesGrid">
         <article class="card service">
           <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=82" alt="Stage de football jeunes">
           <div class="body">
@@ -1115,10 +1115,10 @@
   <section id="entrainements" class="alt">
     <div class="wrap grid-2">
       <div>
-        <span class="kicker">Entraînements spécifiques</span>
-        <h2>Des séances ciblées pour corriger, répéter et gagner en confiance.</h2>
-        <p>Chaque séance est construite autour d’un objectif clair. Le joueur repart avec des repères simples, des exercices précis et une meilleure lecture de ses qualités.</p>
-        <ul class="list">
+        <span class="kicker" id="trainingKicker">Entraînements spécifiques</span>
+        <h2 id="trainingTitle">Des séances ciblées pour corriger, répéter et gagner en confiance.</h2>
+        <p id="trainingText">Chaque séance est construite autour d’un objectif clair. Le joueur repart avec des repères simples, des exercices précis et une meilleure lecture de ses qualités.</p>
+        <ul class="list" id="trainingList">
           <li>Technique individuelle : conduite, passe, contrôle orienté, dribble, finition.</li>
           <li>Spécifique par poste : attaquant, milieu, défenseur, gardien de but.</li>
           <li>Coordination, appuis, vitesse, explosivité et changements de direction.</li>
@@ -1126,7 +1126,7 @@
         </ul>
       </div>
       <div class="feature-photo">
-        <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=1300&q=82" alt="Jeune joueur en séance spécifique">
+        <img id="trainingImage" src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=1300&q=82" alt="Jeune joueur en séance spécifique">
       </div>
     </div>
   </section>
@@ -1134,9 +1134,9 @@
   <section id="stages">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">Stages VFA</span>
-        <h2>Des stages pour revenir plus fort à chaque période clé de la saison.</h2>
-        <p class="muted">Pendant les vacances ou en séances spécifiques, chaque joueur travaille avec intensité, prend confiance et repart avec des repères concrets pour progresser en club.</p>
+        <span class="kicker" id="stagesKicker">Stages VFA</span>
+        <h2 id="stagesTitle">Des stages pour revenir plus fort à chaque période clé de la saison.</h2>
+        <p class="muted" id="stagesText">Pendant les vacances ou en séances spécifiques, chaque joueur travaille avec intensité, prend confiance et repart avec des repères concrets pour progresser en club.</p>
       </div>
       <div class="programs" id="programCards">
         <a class="card" href="#inscription-stage" aria-label="S'inscrire au stage hiver">
@@ -1186,7 +1186,7 @@
     <div class="wrap contact-panel">
       <div class="stage-showcase">
         <img class="mini-logo" src="assets/vision-foot-logo.png" alt="Logo Vision Foot Académie">
-        <h2>Inscription aux stages VFA</h2>
+        <h2 id="stageFormIntroTitle">Inscription aux stages VFA</h2>
         <div class="stage-posters" aria-label="Visuels de stages Vision Foot Académie">
           <div class="poster"><strong>Stage hiver</strong></div>
           <div class="poster"><strong>Stage d'été</strong></div>
@@ -1194,8 +1194,8 @@
           <div class="poster"><strong>Tournoi final</strong></div>
         </div>
         <div class="contact-box">
-          <p><strong>Stages et séances spécifiques</strong></p>
-          <ul class="stage-checks">
+          <p><strong id="stageInfoTitle">Stages et séances spécifiques</strong></p>
+          <ul class="stage-checks" id="stageInfoItems">
             <li>Stage hiver et stage d'été</li>
             <li>Pack 5 séances spécifiques : 120€</li>
             <li>Pack 10 séances spécifiques : 220€</li>
@@ -1207,7 +1207,7 @@
       <form id="stageForm" name="inscription-stage" method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="inscription-stage">
         <p style="display:none;"><label>Ne pas remplir <input name="bot-field"></label></p>
-        <h2 class="registration-title">Formulaire d'inscription stage</h2>
+        <h2 class="registration-title" id="stageFormTitle">Formulaire d'inscription stage</h2>
         <input type="hidden" name="demande" value="Stage football">
 
         <div class="form-grid">
@@ -1343,7 +1343,7 @@
   </section>
 
   <section class="band">
-    <div class="wrap grid-3">
+    <div class="wrap grid-3" id="valuesGrid">
       <article>
         <h3>Technique</h3>
         <p class="muted">Beaucoup de ballon, beaucoup de répétitions, des corrections simples et directes.</p>
@@ -1362,9 +1362,9 @@
   <section id="tournois" class="alt">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">Tournois et événements</span>
-        <h2>Des tournois où chaque équipe vient vivre son grand moment.</h2>
-        <p class="muted">Ambiance, intensité, respect, récompenses, photos, finales et souvenirs : Vision Foot Académie veut créer des journées qui restent dans la tête des joueurs, des éducateurs et des familles.</p>
+        <span class="kicker" id="tournamentsKicker">Tournois et événements</span>
+        <h2 id="tournamentsTitle">Des tournois où chaque équipe vient vivre son grand moment.</h2>
+        <p class="muted" id="tournamentsText">Ambiance, intensité, respect, récompenses, photos, finales et souvenirs : Vision Foot Académie veut créer des journées qui restent dans la tête des joueurs, des éducateurs et des familles.</p>
       </div>
       <div class="events" id="eventCards">
         <article class="card">
@@ -1384,8 +1384,8 @@
         </article>
       </div>
       <div class="tournament-cta">
-        <p>Ton équipe veut participer au prochain tournoi VFA ?</p>
-        <a class="btn" href="#inscription-tournoi">Inscription tournoi</a>
+        <p id="tournamentCta">Ton équipe veut participer au prochain tournoi VFA ?</p>
+        <a class="btn" id="tournamentButton" href="#inscription-tournoi">Inscription tournoi</a>
       </div>
     </div>
   </section>
@@ -1394,8 +1394,8 @@
     <div class="wrap">
       <div class="section-head">
         <span class="kicker">Inscription club</span>
-        <h2>Inscris ton équipe au prochain tournoi Vision Foot Académie.</h2>
-        <p class="muted">Remplis la fiche avec les informations du club, de l’équipe et du référent pour préparer votre participation au tournoi.</p>
+        <h2 id="tournamentFormTitle">Inscris ton équipe au prochain tournoi Vision Foot Académie.</h2>
+        <p class="muted" id="tournamentFormText">Remplis la fiche avec les informations du club, de l’équipe et du référent pour préparer votre participation au tournoi.</p>
       </div>
       <div class="tournament-form-shell">
         <form id="tournamentForm" name="inscription-tournoi" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -1475,11 +1475,11 @@
   <section id="galerie">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">Galerie</span>
-        <h2>Nos photos, nos vidéos, nos meilleurs moments.</h2>
+        <span class="kicker" id="galleryKicker">Galerie</span>
+        <h2 id="galleryTitle">Nos photos, nos vidéos, nos meilleurs moments.</h2>
         <p class="muted" id="galleryIntro">Plonge dans l’ambiance Vision Foot Académie : intensité des séances, sourires des joueurs, finales de tournois et moments qui donnent envie de rejoindre le prochain rassemblement.</p>
       </div>
-      <div class="gallery-grid">
+      <div class="gallery-grid" id="galleryGrid">
         <article class="media-card large">
           <span class="tag">Photo</span>
           <h3 id="galleryTitle1">Stage Vision Foot Académie</h3>
@@ -1506,11 +1506,11 @@
   <section id="actualites" class="alt">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">Actualités</span>
-        <h2>Le parcours et les nouvelles de nos anciens académiciens.</h2>
+        <span class="kicker" id="newsKicker">Actualités</span>
+        <h2 id="newsTitle">Le parcours et les nouvelles de nos anciens académiciens.</h2>
         <p class="muted" id="newsIntro">Retrouve les progrès, les réussites, les essais, les sélections et les moments forts des joueurs passés par Vision Foot Académie.</p>
       </div>
-      <div class="news-grid">
+      <div class="news-grid" id="newsGrid">
         <article class="news-card">
           <img class="avatar" src="assets/vision-foot-logo.png" alt="Ancien académicien à remplacer">
           <span class="tag">Parcours</span>
@@ -1536,22 +1536,22 @@
   <section id="reseaux" class="social-zone">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">Réseaux sociaux</span>
-        <h2>Suis Vision Foot Académie au plus près du terrain.</h2>
+        <span class="kicker" id="socialKicker">Réseaux sociaux</span>
+        <h2 id="socialTitle">Suis Vision Foot Académie au plus près du terrain.</h2>
         <p class="muted" id="socialIntro">Rejoins la communauté VFA, suis les coulisses des stages, les vidéos terrain et les prochains tournois.</p>
       </div>
       <div class="social-links">
         <a class="social-card" id="facebookLink" href="#" aria-label="Facebook Vision Foot Académie">
           <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#1877f2"/><path fill="#fff" d="M28.6 25.5h-3.1v10.3h-4.3V25.5h-2.3v-3.7h2.3v-2.4c0-3 1.8-4.8 4.7-4.8 1.4 0 2.8.2 2.8.2v3.1h-1.6c-1.5 0-1.9.9-1.9 1.9v2h3.4l-.5 3.7Z"/></svg>
-          <div><strong>Facebook</strong><span>Ajouter le lien de la page</span></div>
+          <div><strong>Facebook</strong><span id="facebookText">Ajouter le lien de la page</span></div>
         </a>
         <a class="social-card" id="instagramLink" href="#" aria-label="Instagram Vision Foot Académie">
           <svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="ig" x1="8" x2="40" y1="40" y2="8"><stop stop-color="#feda75"/><stop offset=".35" stop-color="#fa7e1e"/><stop offset=".7" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="7" y="7" width="34" height="34" rx="10" fill="url(#ig)"/><circle cx="24" cy="24" r="8" fill="none" stroke="#fff" stroke-width="3"/><circle cx="34" cy="14" r="2.4" fill="#fff"/></svg>
-          <div><strong>Instagram</strong><span>Ajouter le lien du profil</span></div>
+          <div><strong>Instagram</strong><span id="instagramText">Ajouter le lien du profil</span></div>
         </a>
         <a class="social-card" id="tiktokLink" href="#" aria-label="TikTok Vision Foot Académie">
           <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#050505"/><path fill="#25f4ee" d="M27 13c1 3.8 3.2 6 6.8 6.4v4.1c-2.4 0-4.5-.7-6.5-2.1v9.1c0 5-3.5 8.5-8.3 8.5-4.2 0-7.6-3-7.6-7.2 0-4.7 3.9-7.9 8.5-7.2v4.3c-2.1-.6-4.1.7-4.1 2.8 0 1.8 1.4 3 3.1 3 2 0 3.5-1.4 3.5-4V13H27Z"/><path fill="#fe2c55" d="M29.2 13c1 3.1 3 4.8 6.1 5.3v4.1c-2.2-.1-4.2-.8-6.1-2.1v9.2c0 5-3.5 8.5-8.3 8.5-2.1 0-4-.8-5.4-2.1 1.2.7 2.6 1.1 4.1 1.1 4.8 0 8.3-3.5 8.3-8.5V13h1.3Z"/></svg>
-          <div><strong>TikTok</strong><span>Ajouter le lien du compte</span></div>
+          <div><strong>TikTok</strong><span id="tiktokText">Ajouter le lien du compte</span></div>
         </a>
       </div>
     </div>
@@ -1560,11 +1560,11 @@
   <section id="sponsors" class="sponsors">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">Sponsors</span>
-        <h2>Ils nous font confiance, ils font grandir le football de demain.</h2>
-        <p class="muted">Associer votre marque à Vision Foot Académie, c’est soutenir la progression des jeunes, la passion du terrain et des événements qui rassemblent les familles, les clubs et les éducateurs.</p>
+        <span class="kicker" id="sponsorsKicker">Sponsors</span>
+        <h2 id="sponsorsTitle">Ils nous font confiance, ils font grandir le football de demain.</h2>
+        <p class="muted" id="sponsorsText">Associer votre marque à Vision Foot Académie, c’est soutenir la progression des jeunes, la passion du terrain et des événements qui rassemblent les familles, les clubs et les éducateurs.</p>
       </div>
-      <div class="sponsor-grid">
+      <div class="sponsor-grid" id="sponsorGrid">
         <div class="sponsor-card" id="sponsor1">Sponsor 1</div>
         <div class="sponsor-card" id="sponsor2">Sponsor 2</div>
         <div class="sponsor-card" id="sponsor3">Sponsor 3</div>
@@ -1576,29 +1576,31 @@
   <section id="contact" class="contact-clean">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">Contact</span>
-        <h2>Une question, une inscription, un partenariat ? Contacte-nous directement.</h2>
-        <p class="muted">Vision Foot Académie répond aux familles, clubs, éducateurs et partenaires pour les stages, entraînements spécifiques, tournois et collaborations.</p>
+        <span class="kicker" id="contactKicker">Contact</span>
+        <h2 id="contactTitle">Une question, une inscription, un partenariat ? Contacte-nous directement.</h2>
+        <p class="muted" id="contactText">Vision Foot Académie répond aux familles, clubs, éducateurs et partenaires pour les stages, entraînements spécifiques, tournois et collaborations.</p>
       </div>
       <div class="contact-methods">
         <article class="contact-method">
           <strong>Email</strong>
-          <a class="contact-value" href="mailto:visionfootacademie@gmail.com">visionfootacademie@gmail.com</a>
+          <a class="contact-value" id="contactEmail" href="mailto:visionfootacademie@gmail.com">visionfootacademie@gmail.com</a>
         </article>
         <article class="contact-method">
           <strong>Téléphones</strong>
+          <div id="contactPhones">
           <a class="contact-value" href="tel:+33609602556">0033609602556</a><br>
           <a class="contact-value" href="tel:+33658162038">0033658162038</a><br>
           <a class="contact-value" href="tel:+33768836304">33768836304</a>
+          </div>
         </article>
         <article class="contact-method">
           <strong>Adresse</strong>
-          <a class="contact-value" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=COMPLEXE%20FERNAND%20FOURNIER%20POLE%20SPORTIF%20Avenue%20Joseph%20Imbert%2013200%20Arles">COMPLEXE FERNAND FOURNIER POLE SPORTIF<br>Avenue Joseph Imbert<br>13200 Arles</a>
+          <a class="contact-value" id="contactAddress" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=COMPLEXE%20FERNAND%20FOURNIER%20POLE%20SPORTIF%20Avenue%20Joseph%20Imbert%2013200%20Arles">COMPLEXE FERNAND FOURNIER POLE SPORTIF<br>Avenue Joseph Imbert<br>13200 Arles</a>
         </article>
         <article class="contact-method">
-          <strong>Disponibilité</strong>
-          <p class="muted">Stages, tournois, entraînements spécifiques, partenariats clubs et sponsors.</p>
-          <a class="btn" target="_blank" rel="noopener" href="https://wa.me/33768836404?text=Bonjour%20Vision%20Foot%20Acad%C3%A9mie%2C%20je%20souhaite%20avoir%20des%20informations.">Nous écrire sur WhatsApp</a>
+          <strong id="availabilityTitle">Disponibilité</strong>
+          <p class="muted" id="availabilityText">Stages, tournois, entraînements spécifiques, partenariats clubs et sponsors.</p>
+          <a class="btn" id="whatsappButton" target="_blank" rel="noopener" href="https://wa.me/33768836404?text=Bonjour%20Vision%20Foot%20Acad%C3%A9mie%2C%20je%20souhaite%20avoir%20des%20informations.">Nous écrire sur WhatsApp</a>
         </article>
       </div>
     </div>
@@ -1606,8 +1608,8 @@
 
   <footer>
     <div class="wrap footer-inner">
-      <span>Vision Foot Académie. Tous droits réservés.</span>
-      <span>Stages | Entraînements spécifiques | Tournois | Galerie | Actualités</span>
+      <span id="footerLeft">Vision Foot Académie. Tous droits réservés.</span>
+      <span id="footerRight">Stages | Entraînements spécifiques | Tournois | Galerie | Actualités</span>
     </div>
   </footer>
 
@@ -1654,7 +1656,19 @@
 
     function setText(id, value) {
       const node = document.querySelector(`#${id}`);
-      if (node && value) node.textContent = value;
+      if (node && value !== undefined && value !== null) node.textContent = value;
+    }
+
+    function setHtml(id, value) {
+      const node = document.querySelector(`#${id}`);
+      if (node && value !== undefined && value !== null) node.innerHTML = String(value).replaceAll("\n", "<br>");
+    }
+
+    function setLink(id, text, href) {
+      const node = document.querySelector(`#${id}`);
+      if (!node) return;
+      if (text !== undefined && text !== null) node.textContent = text;
+      if (href) node.href = href;
     }
 
     function setHref(id, value) {
@@ -1666,40 +1680,212 @@
       }
     }
 
-    function setSponsor(id, name, image) {
-      const node = document.querySelector(`#${id}`);
-      if (!node) return;
-      if (image) {
-        node.innerHTML = `<img src="${image}" alt="${escapeHtml(name || "Sponsor Vision Foot Académie")}">`;
-      } else if (name) {
-        node.textContent = name;
-      }
+    function phoneHref(phone) {
+      return `tel:+${String(phone || "").replace(/\D/g, "")}`;
+    }
+
+    function mapsHref(address) {
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address || "")}`;
+    }
+
+    function whatsappHref(phone, message) {
+      return `https://wa.me/${String(phone || "").replace(/\D/g, "")}?text=${encodeURIComponent(message || "")}`;
+    }
+
+    function listItems(items) {
+      return (items || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    }
+
+    function renderStats(items) {
+      const node = document.querySelector("#statsGrid");
+      if (!node || !Array.isArray(items)) return;
+      node.innerHTML = items.map((item) => `<div class="stat"><strong>${escapeHtml(item.value)}</strong><span>${escapeHtml(item.text)}</span></div>`).join("");
+    }
+
+    function renderServices(items) {
+      const node = document.querySelector("#servicesGrid");
+      if (!node || !Array.isArray(items)) return;
+      node.innerHTML = items.map((item) => `
+        <article class="card service">
+          <img src="${escapeHtml(item.image || "assets/vision-foot-logo.png")}" alt="${escapeHtml(item.alt || item.title || "Offre Vision Foot Académie")}">
+          <div class="body">
+            <span class="tag">${escapeHtml(item.tag)}</span>
+            <h3>${escapeHtml(item.title)}</h3>
+            <p class="muted">${escapeHtml(item.text)}</p>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderPrograms(items) {
+      const node = document.querySelector("#programCards");
+      if (!node || !Array.isArray(items)) return;
+      node.innerHTML = items.map((item) => `
+        <a class="card ${item.highlight ? "highlight" : ""}" href="#inscription-stage">
+          <span class="tag">${escapeHtml(item.tag)}</span>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p class="muted">${escapeHtml(item.text)}</p>
+          <div class="price">${escapeHtml(item.price)}</div>
+          <p class="small">${escapeHtml(item.detail)}</p>
+          <ul class="list">${listItems(item.bullets)}</ul>
+        </a>
+      `).join("");
+    }
+
+    function renderValues(items) {
+      const node = document.querySelector("#valuesGrid");
+      if (!node || !Array.isArray(items)) return;
+      node.innerHTML = items.map((item) => `<article><h3>${escapeHtml(item.title)}</h3><p class="muted">${escapeHtml(item.text)}</p></article>`).join("");
+    }
+
+    function renderTournaments(items) {
+      const node = document.querySelector("#eventCards");
+      if (!node || !Array.isArray(items)) return;
+      node.innerHTML = items.map((item) => `
+        <article class="card">
+          <div class="event-date">${escapeHtml(item.day)}<span>${escapeHtml(item.month)}</span></div>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p class="muted">${escapeHtml(item.text)}</p>
+        </article>
+      `).join("");
+    }
+
+    function renderGallery(items) {
+      const node = document.querySelector("#galleryGrid");
+      if (!node || !Array.isArray(items)) return;
+      node.innerHTML = items.map((item) => `
+        <article class="media-card ${item.large ? "large" : ""}" style="${item.image ? `background-image: linear-gradient(180deg, rgba(7, 17, 38, .05), rgba(7, 17, 38, .88)), url('${escapeHtml(item.image)}')` : ""}">
+          ${item.type === "Vidéo" ? '<span class="play">▶</span>' : ""}
+          <span class="tag">${escapeHtml(item.type || "Photo")}</span>
+          <h3>${escapeHtml(item.title)}</h3>
+          ${item.text ? `<p>${escapeHtml(item.text)}</p>` : ""}
+        </article>
+      `).join("");
+    }
+
+    function renderNews(items) {
+      const node = document.querySelector("#newsGrid");
+      if (!node || !Array.isArray(items)) return;
+      node.innerHTML = items.map((item) => `
+        <article class="news-card">
+          <img class="avatar" src="${escapeHtml(item.image || "assets/vision-foot-logo.png")}" alt="${escapeHtml(item.title || "Actualité Vision Foot Académie")}">
+          <span class="tag">${escapeHtml(item.tag)}</span>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p class="muted">${escapeHtml(item.text)}</p>
+        </article>
+      `).join("");
+    }
+
+    function renderSponsors(items) {
+      const node = document.querySelector("#sponsorGrid");
+      if (!node || !Array.isArray(items)) return;
+      node.innerHTML = items.map((item) => `
+        <div class="sponsor-card">
+          ${item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name || "Sponsor Vision Foot Académie")}">` : escapeHtml(item.name || "Sponsor")}
+        </div>
+      `).join("");
+    }
+
+    function normalizeContent(content) {
+      return {
+        ...content,
+        ...content.identity,
+        ...content.home,
+        ...content.offers,
+        ...content.training,
+        ...content.stages,
+        ...content.valuesBlock,
+        ...content.tournamentsBlock,
+        ...content.galleryBlock,
+        ...content.newsBlock,
+        ...content.socialBlock,
+        ...content.sponsorsBlock,
+        ...content.contactBlock
+      };
     }
 
     function applyContent(content) {
       if (!content) return;
+      content = normalizeContent(content);
+      setText("brandText", content.siteName);
+      setText("navCta", content.navCta);
+      setText("topBrandLine", `${content.siteName || "Vision Foot Académie"} | ${content.tagline || ""}`);
+      setText("topContactLine", `${(content.phones || []).join(" / ")} | ${content.email || ""}`);
+      setText("heroKicker", content.heroKicker);
+      setText("heroTitle", content.heroTitle);
+      setText("heroText", content.heroText);
+      setLink("heroPrimary", content.heroPrimaryText, content.heroPrimaryLink);
+      setLink("heroSecondary", content.heroSecondaryText, content.heroSecondaryLink);
+      renderStats(content.stats);
+      setText("servicesKicker", content.servicesKicker);
+      setText("servicesTitle", content.servicesTitle);
+      setText("servicesText", content.servicesText);
+      renderServices(content.services);
+      setText("trainingKicker", content.trainingKicker);
+      setText("trainingTitle", content.trainingTitle);
+      setText("trainingText", content.trainingText);
+      if (content.trainingImage) document.querySelector("#trainingImage")?.setAttribute("src", content.trainingImage);
+      const trainingList = document.querySelector("#trainingList");
+      if (trainingList && Array.isArray(content.trainingItems)) trainingList.innerHTML = listItems(content.trainingItems);
+      setText("stagesKicker", content.stagesKicker);
+      setText("stagesTitle", content.stagesTitle);
+      setText("stagesText", content.stagesText);
+      renderPrograms(content.programs);
+      setText("stageFormTitle", content.stageFormTitle);
+      setText("stageFormIntroTitle", content.stageFormIntroTitle);
+      setText("stageInfoTitle", content.stageInfoTitle);
+      const stageInfo = document.querySelector("#stageInfoItems");
+      if (stageInfo && Array.isArray(content.stageInfoItems)) stageInfo.innerHTML = listItems(content.stageInfoItems);
+      renderValues(content.values);
+      setText("tournamentsKicker", content.tournamentsKicker);
+      setText("tournamentsTitle", content.tournamentsTitle);
+      setText("tournamentsText", content.tournamentsText);
+      renderTournaments(content.tournaments);
+      setText("tournamentCta", content.tournamentCta);
+      setText("tournamentButton", content.tournamentButton);
+      setText("tournamentFormTitle", content.tournamentFormTitle);
+      setText("tournamentFormText", content.tournamentFormText);
+      setText("galleryKicker", content.galleryKicker);
+      setText("galleryTitle", content.galleryTitle);
       setText("galleryIntro", content.galleryIntro);
-      setText("galleryTitle1", content.galleryTitle1);
-      setText("galleryText1", content.galleryText1);
-      setText("galleryTitle2", content.galleryTitle2);
-      setText("galleryTitle3", content.galleryTitle3);
-      setText("galleryTitle4", content.galleryTitle4);
+      renderGallery(content.galleryItems);
+      setText("newsKicker", content.newsKicker);
+      setText("newsTitle", content.newsTitle);
       setText("newsIntro", content.newsIntro);
-      setText("newsTitle1", content.newsTitle1);
-      setText("newsText1", content.newsText1);
-      setText("newsTitle2", content.newsTitle2);
-      setText("newsText2", content.newsText2);
-      setText("newsTitle3", content.newsTitle3);
-      setText("newsText3", content.newsText3);
+      renderNews(content.news);
+      setText("socialKicker", content.socialKicker);
+      setText("socialTitle", content.socialTitle);
       setText("socialIntro", content.socialIntro);
       setHref("facebookLink", content.facebookUrl);
       setHref("instagramLink", content.instagramUrl);
       setHref("tiktokLink", content.tiktokUrl);
-      setSponsor("sponsor1", content.sponsor1, content.sponsorImage1);
-      setSponsor("sponsor2", content.sponsor2, content.sponsorImage2);
-      setSponsor("sponsor3", content.sponsor3, content.sponsorImage3);
-      setSponsor("sponsor4", content.sponsor4, content.sponsorImage4);
+      setText("facebookText", content.facebookText);
+      setText("instagramText", content.instagramText);
+      setText("tiktokText", content.tiktokText);
+      setText("sponsorsKicker", content.sponsorsKicker);
+      setText("sponsorsTitle", content.sponsorsTitle);
+      setText("sponsorsText", content.sponsorsText);
+      renderSponsors(content.sponsors);
+      setText("contactKicker", content.contactKicker);
+      setText("contactTitle", content.contactTitle);
+      setText("contactText", content.contactText);
+      setLink("contactEmail", content.email, `mailto:${content.email}`);
+      const phones = document.querySelector("#contactPhones");
+      if (phones && Array.isArray(content.phones)) {
+        phones.innerHTML = content.phones.map((phone) => `<a class="contact-value" href="${phoneHref(phone)}">${escapeHtml(phone)}</a>`).join("<br>");
+      }
+      setHtml("contactAddress", escapeHtml(content.address || ""));
+      const addressNode = document.querySelector("#contactAddress");
+      if (addressNode) addressNode.href = mapsHref(content.address);
+      setText("availabilityTitle", content.availabilityTitle);
+      setText("availabilityText", content.availabilityText);
+      setLink("whatsappButton", content.whatsappButton, whatsappHref(content.whatsapp, content.whatsappMessage));
+      const stageWhatsApp = document.querySelector(".contact-box a[href*='wa.me']");
+      if (stageWhatsApp) stageWhatsApp.href = whatsappHref(content.whatsapp, content.stageWhatsAppText);
+      setText("footerLeft", content.footerLeft);
+      setText("footerRight", content.footerRight);
     }
+
 
     function applyAdminContent() {
       applyContent(readStore("vfa_public_content", null));

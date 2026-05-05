@@ -1,28 +1,288 @@
 {
-  "galleryIntro": "Plonge dans l'ambiance Vision Foot Académie : intensité des séances, sourires des joueurs, finales de tournois et moments qui donnent envie de rejoindre le prochain rassemblement.",
-  "galleryTitle1": "Stage Vision Foot Académie",
-  "galleryText1": "Technique, intensité et plaisir de jouer.",
-  "galleryTitle2": "Extrait entraînement",
-  "galleryTitle3": "Tournoi VFA",
-  "galleryTitle4": "Ambiance terrain",
-  "newsIntro": "Retrouve les progrès, les réussites, les essais, les sélections et les moments forts des joueurs passés par Vision Foot Académie.",
-  "newsTitle1": "Un ancien VFA rejoint un nouveau projet",
-  "newsText1": "Son histoire, son club, son évolution et ce que l'académie lui a apporté.",
-  "newsTitle2": "Sélection, essai ou tournoi réussi",
-  "newsText2": "Une bonne nouvelle à partager pour valoriser les jeunes et leur progression.",
-  "newsTitle3": "La parole aux académiciens",
-  "newsText3": "Une citation, une photo et le parcours du joueur ou de la famille.",
-  "socialIntro": "Rejoins la communauté VFA, suis les coulisses des stages, les vidéos terrain et les prochains tournois.",
-  "facebookUrl": "#",
-  "instagramUrl": "#",
-  "tiktokUrl": "#",
-  "sponsor1": "Sponsor 1",
-  "sponsor2": "Sponsor 2",
-  "sponsor3": "Sponsor 3",
-  "sponsor4": "Votre logo ici",
-  "sponsorImage1": "",
-  "sponsorImage2": "",
-  "sponsorImage3": "",
-  "sponsorImage4": ""
+  "identity": {
+    "siteName": "Vision Foot Académie",
+    "tagline": "Stages, entraînements spécifiques, tournois",
+    "email": "visionfootacademie@gmail.com",
+    "phones": [
+      "0033609602556",
+      "0033658162038",
+      "33768836304"
+    ],
+    "whatsapp": "33768836404",
+    "address": "COMPLEXE FERNAND FOURNIER POLE SPORTIF\nAvenue Joseph Imbert\n13200 Arles",
+    "navCta": "S'inscrire"
+  },
+  "home": {
+    "heroKicker": "Académie de football toutes catégories",
+    "heroTitle": "Stages, entraînements spécifiques et tournois pour progresser vraiment.",
+    "heroText": "Vision Foot Académie accompagne les joueurs et joueuses avec des séances exigeantes, des stages intensifs et des événements football pensés pour chaque âge, chaque poste et chaque objectif.",
+    "heroPrimaryText": "Réserver une place",
+    "heroPrimaryLink": "#contact",
+    "heroSecondaryText": "Voir les programmes",
+    "heroSecondaryLink": "#services",
+    "stats": [
+      {
+        "value": "U6-U18",
+        "text": "Toutes catégories jeunes"
+      },
+      {
+        "value": "Stages",
+        "text": "Vacances et week-ends"
+      },
+      {
+        "value": "Spécifique",
+        "text": "Technique, poste, gardien"
+      },
+      {
+        "value": "Tournois",
+        "text": "Événements toute saison"
+      }
+    ]
+  },
+  "offers": {
+    "servicesKicker": "Nos offres",
+    "servicesTitle": "Un seul objectif : faire progresser les joueurs sur le terrain.",
+    "servicesText": "La VFA est une académie football centrée sur la pratique, l'intensité, la répétition technique, la confiance et le plaisir de jouer.",
+    "services": [
+      {
+        "tag": "Vacances",
+        "title": "Stages de football",
+        "text": "Des stages intensifs pendant les vacances pour travailler la technique, le jeu, la finition et l'attitude.",
+        "image": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=82",
+        "alt": "Stage de football jeunes"
+      },
+      {
+        "tag": "Progression",
+        "title": "Entraînements spécifiques",
+        "text": "Séances par poste, technique individuelle, vitesse, motricité, gardiens, finition et duels.",
+        "image": "https://images.unsplash.com/photo-1600679472829-3044539ce8ed?auto=format&fit=crop&w=1000&q=82",
+        "alt": "Entraînement spécifique football"
+      },
+      {
+        "tag": "Compétition",
+        "title": "Tournois toutes catégories",
+        "text": "Organisation de tournois U6 à U18, challenges, plateaux, événements clubs et journées foot.",
+        "image": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=82",
+        "alt": "Tournoi de football"
+      }
+    ]
+  },
+  "training": {
+    "trainingKicker": "Entraînements spécifiques",
+    "trainingTitle": "Des séances ciblées pour corriger, répéter et gagner en confiance.",
+    "trainingText": "Chaque séance est construite autour d'un objectif clair. Le joueur repart avec des repères simples, des exercices précis et une meilleure lecture de ses qualités.",
+    "trainingImage": "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=1300&q=82",
+    "trainingItems": [
+      "Technique individuelle : conduite, passe, contrôle orienté, dribble, finition.",
+      "Spécifique par poste : attaquant, milieu, défenseur, gardien de but.",
+      "Coordination, appuis, vitesse, explosivité et changements de direction.",
+      "Petits groupes pour garder un maximum de répétitions et de corrections."
+    ]
+  },
+  "stages": {
+    "stagesKicker": "Stages VFA",
+    "stagesTitle": "Des stages pour revenir plus fort à chaque période clé de la saison.",
+    "stagesText": "Pendant les vacances ou en séances spécifiques, chaque joueur travaille avec intensité, prend confiance et repart avec des repères concrets pour progresser en club.",
+    "programs": [
+      {
+        "tag": "Découverte",
+        "title": "Stage hiver",
+        "text": "Un stage intense pour garder le rythme, renforcer les bases techniques et préparer la reprise.",
+        "price": "40€",
+        "detail": "à partir de la journée",
+        "highlight": false,
+        "bullets": [
+          "2 séances terrain",
+          "Ateliers techniques",
+          "Défis et matchs"
+        ]
+      },
+      {
+        "tag": "Populaire",
+        "title": "Stage d'été",
+        "text": "Le grand rendez-vous vacances pour progresser, jouer, performer et vivre une vraie semaine football.",
+        "price": "180€",
+        "detail": "du lundi au vendredi",
+        "highlight": true,
+        "bullets": [
+          "Technique et motricité",
+          "Tournoi de fin de stage",
+          "Bilan joueur"
+        ]
+      },
+      {
+        "tag": "Spécifiques",
+        "title": "Séances spécifiques",
+        "text": "Un accompagnement ciblé pour progresser sur un point précis : poste, technique, vitesse ou finition.",
+        "price": "120€ / 220€",
+        "detail": "pack 5 séances / pack 10 séances",
+        "highlight": false,
+        "bullets": [
+          "Pack 5 séances : 120€",
+          "Pack 10 séances : 220€",
+          "Suivi progression"
+        ]
+      }
+    ],
+    "stageFormTitle": "Formulaire d'inscription stage",
+    "stageFormIntroTitle": "Inscription aux stages VFA",
+    "stageInfoTitle": "Stages et séances spécifiques",
+    "stageInfoItems": [
+      "Stage hiver et stage d'été",
+      "Pack 5 séances spécifiques : 120€",
+      "Pack 10 séances spécifiques : 220€",
+      "Places limitées par catégorie"
+    ],
+    "stageWhatsAppText": "Bonjour Vision Foot Académie, je souhaite des informations pour un stage."
+  },
+  "valuesBlock": {
+    "values": [
+      {
+        "title": "Technique",
+        "text": "Beaucoup de ballon, beaucoup de répétitions, des corrections simples et directes."
+      },
+      {
+        "title": "Intensité",
+        "text": "Des séances rythmées, adaptées à l'âge, pour habituer les joueurs à faire les bons gestes vite."
+      },
+      {
+        "title": "Confiance",
+        "text": "Un cadre positif, exigeant et motivant pour oser, rater, recommencer et progresser."
+      }
+    ]
+  },
+  "tournamentsBlock": {
+    "tournamentsKicker": "Tournois et événements",
+    "tournamentsTitle": "Des tournois où chaque équipe vient vivre son grand moment.",
+    "tournamentsText": "Ambiance, intensité, respect, récompenses, photos, finales et souvenirs : Vision Foot Académie veut créer des journées qui restent dans la tête des joueurs, des éducateurs et des familles.",
+    "tournaments": [
+      {
+        "day": "15",
+        "month": "juin",
+        "title": "Vision Foot Challenge",
+        "text": "Un tournoi rythmé pour les jeunes catégories, avec matchs courts, classement, défis techniques et remise de trophées."
+      },
+      {
+        "day": "22",
+        "month": "juin",
+        "title": "VFA Cup",
+        "text": "Une vraie journée compétition : poules, phases finales, prix individuels, photos d'équipe et ambiance tournoi."
+      },
+      {
+        "day": "06",
+        "month": "juil",
+        "title": "Tournoi des étoiles",
+        "text": "Un événement festif pour finir la saison avec des matchs, animations, récompenses et une belle expérience pour les familles."
+      }
+    ],
+    "tournamentCta": "Ton équipe veut participer au prochain tournoi VFA ?",
+    "tournamentButton": "Inscription tournoi",
+    "tournamentFormTitle": "Inscris ton équipe au prochain tournoi Vision Foot Académie.",
+    "tournamentFormText": "Remplis la fiche avec les informations du club, de l'équipe et du référent pour préparer votre participation au tournoi."
+  },
+  "galleryBlock": {
+    "galleryKicker": "Galerie",
+    "galleryTitle": "Nos photos, nos vidéos, nos meilleurs moments.",
+    "galleryIntro": "Plonge dans l'ambiance Vision Foot Académie : intensité des séances, sourires des joueurs, finales de tournois et moments qui donnent envie de rejoindre le prochain rassemblement.",
+    "galleryItems": [
+      {
+        "type": "Photo",
+        "title": "Stage Vision Foot Académie",
+        "text": "Technique, intensité et plaisir de jouer.",
+        "image": "https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200&q=82",
+        "large": true
+      },
+      {
+        "type": "Vidéo",
+        "title": "Extrait entraînement",
+        "text": "",
+        "image": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=82",
+        "large": false
+      },
+      {
+        "type": "Photo",
+        "title": "Tournoi VFA",
+        "text": "",
+        "image": "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=1000&q=82",
+        "large": false
+      },
+      {
+        "type": "Vidéo",
+        "title": "Ambiance terrain",
+        "text": "",
+        "image": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=82",
+        "large": false
+      }
+    ]
+  },
+  "newsBlock": {
+    "newsKicker": "Actualités",
+    "newsTitle": "Le parcours et les nouvelles de nos anciens académiciens.",
+    "newsIntro": "Retrouve les progrès, les réussites, les essais, les sélections et les moments forts des joueurs passés par Vision Foot Académie.",
+    "news": [
+      {
+        "tag": "Parcours",
+        "title": "Un ancien VFA rejoint un nouveau projet",
+        "text": "Son histoire, son club, son évolution et ce que l'académie lui a apporté.",
+        "image": "assets/vision-foot-logo.png"
+      },
+      {
+        "tag": "Actualité",
+        "title": "Sélection, essai ou tournoi réussi",
+        "text": "Une bonne nouvelle à partager pour valoriser les jeunes et leur progression.",
+        "image": "assets/vision-foot-logo.png"
+      },
+      {
+        "tag": "Témoignage",
+        "title": "La parole aux académiciens",
+        "text": "Une citation, une photo et le parcours du joueur ou de la famille.",
+        "image": "assets/vision-foot-logo.png"
+      }
+    ]
+  },
+  "socialBlock": {
+    "socialKicker": "Réseaux sociaux",
+    "socialTitle": "Suis Vision Foot Académie au plus près du terrain.",
+    "socialIntro": "Rejoins la communauté VFA, suis les coulisses des stages, les vidéos terrain et les prochains tournois.",
+    "facebookUrl": "#",
+    "facebookText": "Suivre la page",
+    "instagramUrl": "#",
+    "instagramText": "Voir les coulisses",
+    "tiktokUrl": "#",
+    "tiktokText": "Voir les vidéos"
+  },
+  "sponsorsBlock": {
+    "sponsorsKicker": "Sponsors",
+    "sponsorsTitle": "Ils nous font confiance, ils font grandir le football de demain.",
+    "sponsorsText": "Associer votre marque à Vision Foot Académie, c'est soutenir la progression des jeunes, la passion du terrain et des événements qui rassemblent les familles, les clubs et les éducateurs.",
+    "sponsors": [
+      {
+        "name": "Sponsor 1",
+        "image": ""
+      },
+      {
+        "name": "Sponsor 2",
+        "image": ""
+      },
+      {
+        "name": "Sponsor 3",
+        "image": ""
+      },
+      {
+        "name": "Votre logo ici",
+        "image": ""
+      }
+    ]
+  },
+  "contactBlock": {
+    "contactKicker": "Contact",
+    "contactTitle": "Une question, une inscription, un partenariat ? Contacte-nous directement.",
+    "contactText": "Vision Foot Académie répond aux familles, clubs, éducateurs et partenaires pour les stages, entraînements spécifiques, tournois et collaborations.",
+    "availabilityTitle": "Disponibilité",
+    "availabilityText": "Stages, tournois, entraînements spécifiques, partenariats clubs et sponsors.",
+    "whatsappButton": "Nous écrire sur WhatsApp",
+    "whatsappMessage": "Bonjour Vision Foot Académie, je souhaite avoir des informations.",
+    "footerLeft": "Vision Foot Académie. Tous droits réservés.",
+    "footerRight": "Stages | Entraînements spécifiques | Tournois | Galerie | Actualités"
+  }
 }
-

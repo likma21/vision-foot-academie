@@ -12,32 +12,206 @@ collections:
     files:
       - file: "content/site.json"
         name: "site"
-        label: "Vitrine Vision Foot Académie"
+        label: "Page complète Vision Foot Académie"
         format: "json"
         fields:
-          - { label: "Texte galerie", name: "galleryIntro", widget: "text" }
-          - { label: "Galerie - titre principal", name: "galleryTitle1", widget: "string" }
-          - { label: "Galerie - texte principal", name: "galleryText1", widget: "string" }
-          - { label: "Galerie - titre vidéo 1", name: "galleryTitle2", widget: "string" }
-          - { label: "Galerie - titre tournoi", name: "galleryTitle3", widget: "string" }
-          - { label: "Galerie - titre vidéo 2", name: "galleryTitle4", widget: "string" }
-          - { label: "Texte actualités", name: "newsIntro", widget: "text" }
-          - { label: "Actualité 1 - titre", name: "newsTitle1", widget: "string" }
-          - { label: "Actualité 1 - texte", name: "newsText1", widget: "text" }
-          - { label: "Actualité 2 - titre", name: "newsTitle2", widget: "string" }
-          - { label: "Actualité 2 - texte", name: "newsText2", widget: "text" }
-          - { label: "Actualité 3 - titre", name: "newsTitle3", widget: "string" }
-          - { label: "Actualité 3 - texte", name: "newsText3", widget: "text" }
-          - { label: "Appel à action réseaux sociaux", name: "socialIntro", widget: "text" }
-          - { label: "Lien Facebook", name: "facebookUrl", widget: "string", required: false }
-          - { label: "Lien Instagram", name: "instagramUrl", widget: "string", required: false }
-          - { label: "Lien TikTok", name: "tiktokUrl", widget: "string", required: false }
-          - { label: "Sponsor 1 - nom", name: "sponsor1", widget: "string", required: false }
-          - { label: "Sponsor 1 - logo", name: "sponsorImage1", widget: "image", required: false }
-          - { label: "Sponsor 2 - nom", name: "sponsor2", widget: "string", required: false }
-          - { label: "Sponsor 2 - logo", name: "sponsorImage2", widget: "image", required: false }
-          - { label: "Sponsor 3 - nom", name: "sponsor3", widget: "string", required: false }
-          - { label: "Sponsor 3 - logo", name: "sponsorImage3", widget: "image", required: false }
-          - { label: "Sponsor 4 - nom", name: "sponsor4", widget: "string", required: false }
-          - { label: "Sponsor 4 - logo", name: "sponsorImage4", widget: "image", required: false }
+          - label: "Identité et coordonnées"
+            name: "identity"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Nom du site", name: "siteName", widget: "string" }
+              - { label: "Slogan court", name: "tagline", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - label: "Téléphones"
+                name: "phones"
+                widget: "list"
+                field: { label: "Numéro", name: "phone", widget: "string" }
+              - { label: "Numéro WhatsApp international", name: "whatsapp", widget: "string" }
+              - { label: "Adresse", name: "address", widget: "text" }
+              - { label: "Texte bouton menu", name: "navCta", widget: "string" }
 
+          - label: "Accueil"
+            name: "home"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Accroche jaune", name: "heroKicker", widget: "string" }
+              - { label: "Grand titre", name: "heroTitle", widget: "text" }
+              - { label: "Texte principal", name: "heroText", widget: "text" }
+              - { label: "Bouton principal", name: "heroPrimaryText", widget: "string" }
+              - { label: "Lien bouton principal", name: "heroPrimaryLink", widget: "string" }
+              - { label: "Bouton secondaire", name: "heroSecondaryText", widget: "string" }
+              - { label: "Lien bouton secondaire", name: "heroSecondaryLink", widget: "string" }
+              - label: "Chiffres clés"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "Valeur", name: "value", widget: "string" }
+                  - { label: "Texte", name: "text", widget: "string" }
+
+          - label: "Offres"
+            name: "offers"
+            widget: "object"
+            fields:
+              - { label: "Accroche", name: "servicesKicker", widget: "string" }
+              - { label: "Titre", name: "servicesTitle", widget: "text" }
+              - { label: "Texte", name: "servicesText", widget: "text" }
+              - label: "Cartes offres"
+                name: "services"
+                widget: "list"
+                fields:
+                  - { label: "Étiquette", name: "tag", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "text", widget: "text" }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: "Texte image", name: "alt", widget: "string", required: false }
+
+          - label: "Entraînements"
+            name: "training"
+            widget: "object"
+            fields:
+              - { label: "Accroche", name: "trainingKicker", widget: "string" }
+              - { label: "Titre", name: "trainingTitle", widget: "text" }
+              - { label: "Texte", name: "trainingText", widget: "text" }
+              - { label: "Image", name: "trainingImage", widget: "image", required: false }
+              - label: "Points clés"
+                name: "trainingItems"
+                widget: "list"
+                field: { label: "Point", name: "item", widget: "string" }
+
+          - label: "Stages et tarifs"
+            name: "stages"
+            widget: "object"
+            fields:
+              - { label: "Accroche", name: "stagesKicker", widget: "string" }
+              - { label: "Titre", name: "stagesTitle", widget: "text" }
+              - { label: "Texte", name: "stagesText", widget: "text" }
+              - label: "Cartes stages / tarifs"
+                name: "programs"
+                widget: "list"
+                fields:
+                  - { label: "Étiquette", name: "tag", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "text", widget: "text" }
+                  - { label: "Prix", name: "price", widget: "string" }
+                  - { label: "Détail prix", name: "detail", widget: "string" }
+                  - { label: "Mettre en avant", name: "highlight", widget: "boolean", default: false }
+                  - label: "Avantages"
+                    name: "bullets"
+                    widget: "list"
+                    field: { label: "Avantage", name: "bullet", widget: "string" }
+              - { label: "Titre formulaire stage", name: "stageFormTitle", widget: "string" }
+              - { label: "Titre bloc gauche stage", name: "stageFormIntroTitle", widget: "string" }
+              - { label: "Titre infos stage", name: "stageInfoTitle", widget: "string" }
+              - label: "Infos rapides stage"
+                name: "stageInfoItems"
+                widget: "list"
+                field: { label: "Info", name: "item", widget: "string" }
+              - { label: "Message WhatsApp stage", name: "stageWhatsAppText", widget: "string" }
+
+          - label: "Valeurs"
+            name: "valuesBlock"
+            widget: "object"
+            fields:
+              - label: "Cartes valeurs"
+                name: "values"
+                widget: "list"
+                fields:
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "text", widget: "text" }
+
+          - label: "Tournois"
+            name: "tournamentsBlock"
+            widget: "object"
+            fields:
+              - { label: "Accroche", name: "tournamentsKicker", widget: "string" }
+              - { label: "Titre", name: "tournamentsTitle", widget: "text" }
+              - { label: "Texte", name: "tournamentsText", widget: "text" }
+              - label: "Tournois"
+                name: "tournaments"
+                widget: "list"
+                fields:
+                  - { label: "Jour", name: "day", widget: "string" }
+                  - { label: "Mois", name: "month", widget: "string" }
+                  - { label: "Nom", name: "title", widget: "string" }
+                  - { label: "Description", name: "text", widget: "text" }
+              - { label: "Phrase bouton tournoi", name: "tournamentCta", widget: "string" }
+              - { label: "Texte bouton tournoi", name: "tournamentButton", widget: "string" }
+              - { label: "Titre formulaire tournoi", name: "tournamentFormTitle", widget: "text" }
+              - { label: "Texte formulaire tournoi", name: "tournamentFormText", widget: "text" }
+
+          - label: "Galerie"
+            name: "galleryBlock"
+            widget: "object"
+            fields:
+              - { label: "Accroche", name: "galleryKicker", widget: "string" }
+              - { label: "Titre", name: "galleryTitle", widget: "text" }
+              - { label: "Texte", name: "galleryIntro", widget: "text" }
+              - label: "Photos et vidéos"
+                name: "galleryItems"
+                widget: "list"
+                fields:
+                  - { label: "Type", name: "type", widget: "select", options: ["Photo", "Vidéo"] }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "text", widget: "string", required: false }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: "Grande carte", name: "large", widget: "boolean", default: false }
+
+          - label: "Actualités"
+            name: "newsBlock"
+            widget: "object"
+            fields:
+              - { label: "Accroche", name: "newsKicker", widget: "string" }
+              - { label: "Titre", name: "newsTitle", widget: "text" }
+              - { label: "Texte", name: "newsIntro", widget: "text" }
+              - label: "Actualités"
+                name: "news"
+                widget: "list"
+                fields:
+                  - { label: "Étiquette", name: "tag", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "text", widget: "text" }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+
+          - label: "Réseaux sociaux"
+            name: "socialBlock"
+            widget: "object"
+            fields:
+              - { label: "Accroche", name: "socialKicker", widget: "string" }
+              - { label: "Titre", name: "socialTitle", widget: "text" }
+              - { label: "Texte", name: "socialIntro", widget: "text" }
+              - { label: "Lien Facebook", name: "facebookUrl", widget: "string", required: false }
+              - { label: "Texte Facebook", name: "facebookText", widget: "string" }
+              - { label: "Lien Instagram", name: "instagramUrl", widget: "string", required: false }
+              - { label: "Texte Instagram", name: "instagramText", widget: "string" }
+              - { label: "Lien TikTok", name: "tiktokUrl", widget: "string", required: false }
+              - { label: "Texte TikTok", name: "tiktokText", widget: "string" }
+
+          - label: "Sponsors"
+            name: "sponsorsBlock"
+            widget: "object"
+            fields:
+              - { label: "Accroche", name: "sponsorsKicker", widget: "string" }
+              - { label: "Titre", name: "sponsorsTitle", widget: "text" }
+              - { label: "Texte commercial", name: "sponsorsText", widget: "text" }
+              - label: "Logos sponsors"
+                name: "sponsors"
+                widget: "list"
+                fields:
+                  - { label: "Nom", name: "name", widget: "string" }
+                  - { label: "Logo", name: "image", widget: "image", required: false }
+
+          - label: "Contact et bas de page"
+            name: "contactBlock"
+            widget: "object"
+            fields:
+              - { label: "Accroche contact", name: "contactKicker", widget: "string" }
+              - { label: "Titre contact", name: "contactTitle", widget: "text" }
+              - { label: "Texte contact", name: "contactText", widget: "text" }
+              - { label: "Titre disponibilité", name: "availabilityTitle", widget: "string" }
+              - { label: "Texte disponibilité", name: "availabilityText", widget: "text" }
+              - { label: "Texte bouton WhatsApp", name: "whatsappButton", widget: "string" }
+              - { label: "Message WhatsApp", name: "whatsappMessage", widget: "string" }
+              - { label: "Bas de page gauche", name: "footerLeft", widget: "string" }
+              - { label: "Bas de page droite", name: "footerRight", widget: "string" }
