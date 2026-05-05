@@ -1710,7 +1710,9 @@
         }
       });
       window.netlifyIdentity.on("login", () => {
-        window.location.href = "/admin/";
+        if (window.location.pathname.startsWith("/admin")) {
+          window.location.href = "/admin/";
+        }
       });
     }
 
