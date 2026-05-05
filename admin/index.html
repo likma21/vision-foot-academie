@@ -1,13 +1,74 @@
 <!doctype html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin Vision Foot Académie</title>
+  <title>Admin Vision Foot Academie</title>
+  <style>
+    body.is-local {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #071126;
+      background: #f6f7fb;
+    }
+
+    .local-warning {
+      max-width: 560px;
+      padding: 34px;
+      border: 1px solid #dce2ee;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 20px 50px rgba(7, 17, 38, .16);
+    }
+
+    .local-warning h1 {
+      margin: 0 0 12px;
+      font-size: 30px;
+    }
+
+    .local-warning p {
+      margin: 0 0 22px;
+      color: #647086;
+      line-height: 1.55;
+    }
+
+    .local-warning a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 18px;
+      border-radius: 8px;
+      color: #fff;
+      background: #e97922;
+      font-weight: 900;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    if (location.protocol === "file:") {
+      document.body.className = "is-local";
+      document.body.innerHTML = `
+        <main class="local-warning">
+          <h1>Ouvre l'admin en ligne</h1>
+          <p>Cette copie locale ne peut pas se connecter a Git Gateway. Pour modifier le site, utilise l'admin officiel heberge sur ton domaine.</p>
+          <a href="https://visionfootacademie.com/admin/">Ouvrir l'admin Vision Foot Academie</a>
+        </main>
+      `;
+    } else {
+      const identity = document.createElement("script");
+      identity.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
+      document.body.appendChild(identity);
+
+      const cms = document.createElement("script");
+      cms.src = "https://unpkg.com/decap-cms@3.6.2/dist/decap-cms.js";
+      document.body.appendChild(cms);
+    }
+  </script>
 </body>
 </html>
-
