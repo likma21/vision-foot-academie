@@ -10,6 +10,45 @@
     "socialIntro": "Rejoins la communauté VFA, suis les coulisses des stages, les vidéos terrain et les prochains tournois.",
     "instagramText": "Voir les coulisses"
   },
+  "aboutBlock": {
+    "aboutKicker": "Qui sommes-nous ?",
+    "aboutTitle": "Une académie de terrain, créée pour faire progresser les joueurs.",
+    "aboutText": "Vision Foot Académie accompagne les jeunes joueurs et joueuses avec des séances exigeantes, un cadre bienveillant et une vraie culture du travail. Notre objectif est simple : aider chaque joueur à gagner en confiance, en technique et en intelligence de jeu.",
+    "aboutPoints": [
+      {
+        "title": "Progression",
+        "text": "Des contenus adaptés au niveau, à l'âge et aux objectifs."
+      },
+      {
+        "title": "Exigence",
+        "text": "Une intensité terrain pour apprendre vite et bien."
+      },
+      {
+        "title": "Famille",
+        "text": "Un cadre positif où les jeunes prennent plaisir à revenir."
+      }
+    ],
+    "aboutMedia": [
+      {
+        "type": "Photo",
+        "title": "L'esprit Vision Foot Académie",
+        "text": "Une académie centrée sur le terrain, le travail et la confiance.",
+        "image": "assets/vision-foot-logo.png"
+      },
+      {
+        "type": "Photo",
+        "title": "Séances spécifiques",
+        "text": "Des entraînements en petits groupes pour corriger et répéter.",
+        "image": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=82"
+      },
+      {
+        "type": "Photo",
+        "title": "Stages et tournois",
+        "text": "Des rendez-vous pour progresser, jouer et vivre de vrais moments football.",
+        "image": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=82"
+      }
+    ]
+  },
   "tournamentsBlock": {
     "tournamentsKicker": "Tournois et événements",
     "tournamentsTitle": "Des tournois où chaque équipe vient vivre son grand moment.",

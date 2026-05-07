@@ -330,6 +330,114 @@
       padding: 22px;
     }
 
+    .about-section {
+      background:
+        linear-gradient(180deg, rgba(7, 17, 38, .96), rgba(16, 27, 53, .94)),
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=82") center / cover;
+      color: #fff;
+    }
+
+    .about-section h2,
+    .about-section h3 {
+      color: #fff;
+    }
+
+    .about-section .muted,
+    .about-section p {
+      color: rgba(255, 255, 255, .78);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .about-copy {
+      display: grid;
+      gap: 18px;
+    }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .about-point {
+      padding: 18px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .14);
+    }
+
+    .about-point strong {
+      display: block;
+      color: var(--yellow);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .about-media-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+    }
+
+    .about-media {
+      min-height: 210px;
+      position: relative;
+      display: grid;
+      align-content: end;
+      overflow: hidden;
+      padding: 18px;
+      border-radius: var(--radius);
+      background: var(--navy);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, .34);
+      border: 1px solid rgba(255, 255, 255, .14);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .about-media:first-child {
+      min-height: 438px;
+      grid-row: span 2;
+    }
+
+    .about-media::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(7, 17, 38, .05), rgba(7, 17, 38, .88)),
+        var(--about-image, url("assets/vision-foot-logo.png")) center / cover;
+      transition: transform .35s ease;
+    }
+
+    .about-media:hover::before {
+      transform: scale(1.04);
+    }
+
+    .about-media-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-media .play {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      background: var(--orange);
+      color: #fff;
+      font-weight: 900;
+      box-shadow: 0 10px 25px rgba(238, 116, 25, .36);
+    }
+
     .tag {
       display: inline-flex;
       padding: 5px 10px;
@@ -1091,6 +1199,9 @@
       .stats,
       .grid-2,
       .grid-3,
+      .about-layout,
+      .about-points,
+      .about-media-grid,
       .programs,
       .events,
       .contact-panel,
@@ -1116,6 +1227,11 @@
 
       .feature-photo img {
         height: 300px;
+      }
+
+      .about-media:first-child {
+        min-height: 300px;
+        grid-row: auto;
       }
 
       .media-card.large,
@@ -1276,6 +1392,7 @@
       </a>
       <div class="menu">
         <a href="#services">Offres</a>
+        <a href="#qui-sommes-nous">Qui sommes-nous ?</a>
         <a href="#entrainements">Entraînements</a>
         <a href="#stages">Stages</a>
         <a href="#tournois">Tournois</a>
@@ -1340,6 +1457,30 @@
             <span class="tag">Compétition</span>
             <h3>Tournois toutes catégories</h3>
             <p class="muted">Organisation de tournois U6 à U18, challenges, plateaux, événements clubs et journées foot.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="qui-sommes-nous" class="about-section">
+    <div class="wrap about-layout">
+      <div class="about-copy">
+        <span class="kicker" id="aboutKicker">Qui sommes-nous ?</span>
+        <h2 id="aboutTitle">Une académie de terrain, créée pour faire progresser les joueurs.</h2>
+        <p id="aboutText">Vision Foot Académie accompagne les jeunes joueurs et joueuses avec des séances exigeantes, un cadre bienveillant et une vraie culture du travail. Notre objectif est simple : aider chaque joueur à gagner en confiance, en technique et en intelligence de jeu.</p>
+        <div class="about-points" id="aboutPoints">
+          <div class="about-point"><strong>Progression</strong><p>Des contenus adaptés au niveau, à l'âge et aux objectifs.</p></div>
+          <div class="about-point"><strong>Exigence</strong><p>Une intensité terrain pour apprendre vite et bien.</p></div>
+          <div class="about-point"><strong>Famille</strong><p>Un cadre positif où les jeunes prennent plaisir à revenir.</p></div>
+        </div>
+      </div>
+      <div class="about-media-grid" id="aboutMediaGrid">
+        <article class="about-media" style="--about-image: url('assets/vision-foot-logo.png')">
+          <div class="about-media-content">
+            <span class="tag">Photo</span>
+            <h3>Vision Foot Académie</h3>
+            <p>Ajoute ici les photos et vidéos qui racontent l'histoire de l'académie.</p>
           </div>
         </article>
       </div>
@@ -2001,6 +2142,38 @@
       `).join("");
     }
 
+    function renderAboutPoints(items) {
+      const node = document.querySelector("#aboutPoints");
+      if (!node || !Array.isArray(items)) return;
+      node.innerHTML = items.map((item) => `
+        <div class="about-point">
+          <strong>${escapeHtml(item.title)}</strong>
+          <p>${escapeHtml(item.text)}</p>
+        </div>
+      `).join("");
+    }
+
+    function renderAboutMedia(items) {
+      const node = document.querySelector("#aboutMediaGrid");
+      if (!node || !Array.isArray(items)) return;
+      node.innerHTML = items.map((item, index) => `
+        <a class="about-media" href="${escapeHtml(item.mediaUrl || item.videoUrl || item.image || "#qui-sommes-nous")}" data-about-index="${index}" style="${item.image ? `--about-image: url('${escapeHtml(item.image)}')` : ""}" aria-label="Ouvrir ${escapeHtml(item.title || "media qui sommes-nous")}">
+          <div class="about-media-content">
+            ${item.type === "VidÃ©o" || item.type === "Vidéo" || item.type === "Video" ? '<span class="play">▶</span>' : ""}
+            <span class="tag">${escapeHtml(item.type || "Photo")}</span>
+            <h3>${escapeHtml(item.title || "")}</h3>
+            ${item.text ? `<p>${escapeHtml(item.text)}</p>` : ""}
+          </div>
+        </a>
+      `).join("");
+      Array.from(node.querySelectorAll(".about-media")).forEach((card, index) => {
+        card.onclick = (event) => {
+          event.preventDefault();
+          openGalleryItem(items[index]);
+        };
+      });
+    }
+
     function renderPrograms(items) {
       const node = document.querySelector("#programCards");
       if (!node || !Array.isArray(items)) return;
@@ -2233,6 +2406,7 @@
         ...content,
         ...content.identity,
         ...content.home,
+        ...content.aboutBlock,
         ...content.offers,
         ...content.training,
         ...content.stages,
@@ -2263,6 +2437,11 @@
       setText("servicesTitle", content.servicesTitle);
       setText("servicesText", content.servicesText);
       renderServices(content.services);
+      setText("aboutKicker", content.aboutKicker);
+      setText("aboutTitle", content.aboutTitle);
+      setText("aboutText", content.aboutText);
+      renderAboutPoints(content.aboutPoints);
+      renderAboutMedia(content.aboutMedia);
       setText("trainingKicker", content.trainingKicker);
       setText("trainingTitle", content.trainingTitle);
       setText("trainingText", content.trainingText);

@@ -67,6 +67,30 @@ collections:
                   - { label: "Image", name: "image", widget: "image", required: false }
                   - { label: "Texte image", name: "alt", widget: "string", required: false }
 
+          - label: "Qui sommes-nous ?"
+            name: "aboutBlock"
+            widget: "object"
+            fields:
+              - { label: "Accroche", name: "aboutKicker", widget: "string" }
+              - { label: "Titre", name: "aboutTitle", widget: "text" }
+              - { label: "Texte de présentation", name: "aboutText", widget: "text" }
+              - label: "Points forts"
+                name: "aboutPoints"
+                widget: "list"
+                fields:
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "text", widget: "text" }
+              - label: "Photos et vidéos de présentation"
+                name: "aboutMedia"
+                widget: "list"
+                summary: "{{type}} - {{title}}"
+                fields:
+                  - { label: "Type", name: "type", widget: "select", options: ["Photo", "Vidéo"], default: "Photo" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "text", widget: "string", required: false }
+                  - { label: "Image ou couverture", name: "image", widget: "image", required: false }
+                  - { label: "Lien vidéo ou média", name: "mediaUrl", widget: "string", required: false, hint: "Pour une vidéo, colle un lien YouTube/Vimeo ou un fichier vidéo." }
+
           - label: "Entraînements"
             name: "training"
             widget: "object"
