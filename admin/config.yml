@@ -148,9 +148,10 @@ collections:
               - { label: "Accroche", name: "galleryKicker", widget: "string" }
               - { label: "Titre", name: "galleryTitle", widget: "text" }
               - { label: "Texte", name: "galleryIntro", widget: "text" }
-              - label: "Photos et vidéos"
+              - label: "Photos et vidéos à faire défiler"
                 name: "galleryItems"
                 widget: "list"
+                summary: "{{type}} - {{title}}"
                 fields:
                   - { label: "Type", name: "type", widget: "select", options: ["Photo", "Vidéo"] }
                   - { label: "Titre", name: "title", widget: "string" }
