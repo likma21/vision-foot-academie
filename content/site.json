@@ -219,7 +219,7 @@
         "type": "Photo",
         "title": "Stage Vision Foot Académie",
         "text": "Technique, intensité et plaisir de jouer.",
-        "image": "/uploads/1000132553.jpg",
+        "image": "/uploads/1000132550.jpg",
         "albumItems": [
           {
             "type": "Photo",
@@ -238,6 +238,10 @@
             "title": "Stage - groupe VFA",
             "text": "Un cadre exigeant et bienveillant pour progresser.",
             "image": "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=1200&q=82"
+          },
+          {
+            "type": "Photo",
+            "image": "/uploads/1000132553.jpg"
           }
         ],
         "large": true
