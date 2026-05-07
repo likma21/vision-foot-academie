@@ -158,6 +158,18 @@ collections:
                   - { label: "Texte", name: "text", widget: "string", required: false }
                   - { label: "Image", name: "image", widget: "image", required: false }
                   - { label: "Lien vidéo ou média à ouvrir", name: "mediaUrl", widget: "string", required: false, hint: "Pour une vidéo, colle un lien YouTube/Vimeo ou sélectionne un fichier vidéo. Si ce champ est vide, la photo s'ouvrira en grand." }
+                  - label: "Médias dans cet album"
+                    name: "albumItems"
+                    widget: "list"
+                    required: false
+                    summary: "{{type}} - {{title}}"
+                    hint: "Ajoute ici plusieurs photos ou vidéos pour cette carte. Si tu laisses vide, la carte ouvrira seulement l'image principale."
+                    fields:
+                      - { label: "Type", name: "type", widget: "select", options: ["Photo", "Vidéo"], default: "Photo" }
+                      - { label: "Titre", name: "title", widget: "string", required: false }
+                      - { label: "Texte", name: "text", widget: "string", required: false }
+                      - { label: "Image ou couverture", name: "image", widget: "image", required: false }
+                      - { label: "Lien vidéo ou média", name: "mediaUrl", widget: "string", required: false }
                   - { label: "Grande carte", name: "large", widget: "boolean", default: false }
 
           - label: "Actualités"

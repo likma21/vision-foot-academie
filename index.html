@@ -842,6 +842,35 @@
       color: var(--muted);
     }
 
+    .media-modal-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .media-modal-nav {
+      display: inline-flex;
+      gap: 8px;
+    }
+
+    .media-modal-nav button {
+      min-height: 38px;
+      padding: 8px 13px;
+      border: 0;
+      border-radius: var(--radius);
+      background: var(--navy);
+      color: #fff;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .media-modal-count {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
     .news-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1214,6 +1243,19 @@
 
       .media-card {
         flex-basis: min(82vw, 330px);
+      }
+
+      .media-modal-panel {
+        padding: 12px;
+      }
+
+      .media-modal-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .media-modal-nav button {
+        flex: 1;
       }
     }
   </style>
@@ -1733,6 +1775,13 @@
         <h3 id="mediaModalTitle"></h3>
         <p id="mediaModalText"></p>
       </div>
+      <div class="media-modal-actions">
+        <span class="media-modal-count" id="mediaModalCount"></span>
+        <div class="media-modal-nav">
+          <button type="button" id="mediaPrev">Précédent</button>
+          <button type="button" id="mediaNext">Suivant</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1836,6 +1885,8 @@
     const stageNote = document.querySelector("#stageNote");
     const tournamentNote = document.querySelector("#tournamentNote");
     window.vfaGalleryItems = [];
+    window.vfaCurrentAlbum = [];
+    window.vfaCurrentMediaIndex = 0;
 
     document.addEventListener("click", (event) => {
       const card = event.target.closest(".media-card");
@@ -1846,10 +1897,18 @@
       if (event.target.id === "mediaModalClose" || event.target.id === "mediaModal") {
         closeGalleryModal();
       }
+      if (event.target.id === "mediaPrev") {
+        showGalleryMedia(window.vfaCurrentMediaIndex - 1);
+      }
+      if (event.target.id === "mediaNext") {
+        showGalleryMedia(window.vfaCurrentMediaIndex + 1);
+      }
     });
 
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") closeGalleryModal();
+      if (event.key === "ArrowLeft") showGalleryMedia(window.vfaCurrentMediaIndex - 1);
+      if (event.key === "ArrowRight") showGalleryMedia(window.vfaCurrentMediaIndex + 1);
       if ((event.key === "Enter" || event.key === " ") && event.target.classList.contains("media-card")) {
         event.preventDefault();
         openGalleryItem(getGalleryItemFromCard(event.target));
@@ -2037,6 +2096,28 @@
       return { title, text, type, image: imageMatch ? imageMatch[1] : "assets/vision-foot-logo.png" };
     }
 
+    function itemToMedia(item) {
+      return {
+        type: item.type || "Photo",
+        title: item.title || "Media Vision Foot Academie",
+        text: item.text || "",
+        image: item.image || "",
+        mediaUrl: item.mediaUrl || item.videoUrl || ""
+      };
+    }
+
+    function getAlbumItems(item) {
+      const album = Array.isArray(item.albumItems) ? item.albumItems : [];
+      const source = album.length ? album : [itemToMedia(item)];
+      return source.map((media) => ({
+        type: media.type || item.type || "Photo",
+        title: media.title || item.title || "Media Vision Foot Academie",
+        text: media.text || item.text || "",
+        image: media.image || item.image || "",
+        mediaUrl: media.mediaUrl || media.videoUrl || item.mediaUrl || item.videoUrl || ""
+      }));
+    }
+
     function hydrateStaticGallery() {
       const cards = Array.from(document.querySelectorAll("#galleryGrid .media-card"));
       if (!cards.length || window.vfaGalleryItems.length) return;
@@ -2055,6 +2136,12 @@
       const modal = document.querySelector("#mediaModal");
       const body = document.querySelector("#mediaModalBody");
       if (!modal || !body || !item) return;
+      window.vfaCurrentAlbum = getAlbumItems(item);
+      window.vfaCurrentMediaIndex = 0;
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      showGalleryMedia(0);
+      return;
       const mediaUrl = item.mediaUrl || item.videoUrl || item.image || "";
       const isVideo = item.type === "Vidéo";
       const isFileVideo = /\.(mp4|webm|ogg)(\?.*)?$/i.test(mediaUrl);
@@ -2075,6 +2162,38 @@
       modal.setAttribute("aria-hidden", "false");
     }
 
+    function showGalleryMedia(index) {
+      const body = document.querySelector("#mediaModalBody");
+      const album = window.vfaCurrentAlbum || [];
+      if (!body || !album.length) return;
+      const nextIndex = (index + album.length) % album.length;
+      window.vfaCurrentMediaIndex = nextIndex;
+      const item = album[nextIndex];
+      const mediaUrl = item.mediaUrl || item.videoUrl || item.image || "";
+      const isVideo = item.type === "VidÃ©o" || item.type === "Vidéo" || item.type === "Video";
+      const isFileVideo = /\.(mp4|webm|ogg)(\?.*)?$/i.test(mediaUrl);
+      const isEmbeddable = /(youtube\.com|youtu\.be|vimeo\.com)/i.test(mediaUrl);
+      if (isVideo && isFileVideo) {
+        body.innerHTML = `<video src="${escapeHtml(mediaUrl)}" controls autoplay playsinline></video>`;
+      } else if (isVideo && isEmbeddable) {
+        body.innerHTML = `<iframe src="${escapeHtml(videoEmbedUrl(mediaUrl))}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+      } else if (isVideo && mediaUrl && mediaUrl !== item.image) {
+        window.open(mediaUrl, "_blank", "noopener");
+        return;
+      } else {
+        body.innerHTML = `<img src="${escapeHtml(item.image || mediaUrl || "assets/vision-foot-logo.png")}" alt="${escapeHtml(item.title || "MÃ©dia Vision Foot AcadÃ©mie")}">`;
+      }
+      setText("mediaModalTitle", item.title || "");
+      setText("mediaModalText", item.text || "");
+      setText("mediaModalCount", album.length > 1 ? `${nextIndex + 1} / ${album.length}` : "");
+      const prev = document.querySelector("#mediaPrev");
+      const next = document.querySelector("#mediaNext");
+      if (prev && next) {
+        prev.style.display = album.length > 1 ? "" : "none";
+        next.style.display = album.length > 1 ? "" : "none";
+      }
+    }
+
     function closeGalleryModal() {
       const modal = document.querySelector("#mediaModal");
       const body = document.querySelector("#mediaModalBody");
@@ -2082,6 +2201,8 @@
       modal.classList.remove("open");
       modal.setAttribute("aria-hidden", "true");
       body.innerHTML = "";
+      window.vfaCurrentAlbum = [];
+      window.vfaCurrentMediaIndex = 0;
     }
 
     function renderNews(items) {

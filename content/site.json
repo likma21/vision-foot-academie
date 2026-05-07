@@ -220,6 +220,26 @@
         "title": "Stage Vision Foot Académie",
         "text": "Technique, intensité et plaisir de jouer.",
         "image": "/uploads/1000132553.jpg",
+        "albumItems": [
+          {
+            "type": "Photo",
+            "title": "Stage - ateliers techniques",
+            "text": "Travail ballon, vitesse d'execution et plaisir sur le terrain.",
+            "image": "/uploads/1000132553.jpg"
+          },
+          {
+            "type": "Photo",
+            "title": "Stage - opposition",
+            "text": "Des matchs pour mettre les apprentissages en situation.",
+            "image": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=82"
+          },
+          {
+            "type": "Photo",
+            "title": "Stage - groupe VFA",
+            "text": "Un cadre exigeant et bienveillant pour progresser.",
+            "image": "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=1200&q=82"
+          }
+        ],
         "large": true
       },
       {
@@ -234,6 +254,20 @@
         "title": "Tournoi VFA",
         "text": "",
         "image": "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=1000&q=82",
+        "albumItems": [
+          {
+            "type": "Photo",
+            "title": "Tournoi - entree des equipes",
+            "text": "Une journee de football, de competition et de souvenirs.",
+            "image": "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=1200&q=82"
+          },
+          {
+            "type": "Photo",
+            "title": "Tournoi - finale",
+            "text": "Des rencontres intenses pour toutes les categories.",
+            "image": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=82"
+          }
+        ],
         "large": false
       },
       {
