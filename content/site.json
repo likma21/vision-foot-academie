@@ -194,21 +194,24 @@
         "title": "Stages de football",
         "text": "Des stages intensifs pendant les vacances pour travailler la technique, le jeu, la finition et l'attitude.",
         "image": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=82",
-        "alt": "Stage de football jeunes"
+        "alt": "Stage de football jeunes",
+        "link": "#stages"
       },
       {
         "tag": "Progression",
         "title": "Entraînements spécifiques",
         "text": "Séances par poste, technique individuelle, vitesse, motricité, gardiens, finition et duels.",
         "image": "https://images.unsplash.com/photo-1600679472829-3044539ce8ed?auto=format&fit=crop&w=1000&q=82",
-        "alt": "Entraînement spécifique football"
+        "alt": "Entraînement spécifique football",
+        "link": "#entrainements"
       },
       {
         "tag": "Compétition",
         "title": "Tournois toutes catégories",
         "text": "Organisation de tournois U6 à U18, challenges, plateaux, événements clubs et journées foot.",
         "image": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=82",
-        "alt": "Tournoi de football"
+        "alt": "Tournoi de football",
+        "link": "#tournois"
       }
     ]
   },

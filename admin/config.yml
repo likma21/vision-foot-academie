@@ -66,6 +66,7 @@ collections:
                   - { label: "Texte", name: "text", widget: "text" }
                   - { label: "Image", name: "image", widget: "image", required: false }
                   - { label: "Texte image", name: "alt", widget: "string", required: false }
+                  - { label: "Lien au clic", name: "link", widget: "string", required: false, hint: "Exemples : #stages, #entrainements ou #tournois" }
 
           - label: "Qui sommes-nous ?"
             name: "aboutBlock"

@@ -319,6 +319,15 @@
       flex-direction: column;
       overflow: hidden;
       padding: 0;
+      color: inherit;
+      text-decoration: none;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-4px);
+      border-color: rgba(238, 116, 25, .5);
+      box-shadow: 0 18px 42px rgba(7, 17, 38, .12);
     }
 
     .service img {
@@ -1435,30 +1444,30 @@
         <p class="muted" id="servicesText">La VFA n’est pas une école classique. C’est une académie football centrée sur la pratique, l’intensité, la répétition technique, la confiance et le plaisir de jouer.</p>
       </div>
       <div class="grid-3" id="servicesGrid">
-        <article class="card service">
+        <a class="card service" href="#stages" aria-label="Voir les stages">
           <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=82" alt="Stage de football jeunes">
           <div class="body">
             <span class="tag">Vacances</span>
             <h3>Stages de football</h3>
             <p class="muted">Des stages intensifs pendant les vacances pour travailler la technique, le jeu, la finition et l’attitude.</p>
           </div>
-        </article>
-        <article class="card service">
+        </a>
+        <a class="card service" href="#entrainements" aria-label="Voir les entraînements spécifiques">
           <img src="https://images.unsplash.com/photo-1600679472829-3044539ce8ed?auto=format&fit=crop&w=1000&q=82" alt="Entraînement spécifique football">
           <div class="body">
             <span class="tag">Progression</span>
             <h3>Entraînements spécifiques</h3>
             <p class="muted">Séances par poste, technique individuelle, vitesse, motricité, gardiens, finition et duels.</p>
           </div>
-        </article>
-        <article class="card service">
+        </a>
+        <a class="card service" href="#tournois" aria-label="Voir les tournois">
           <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=82" alt="Tournoi de football">
           <div class="body">
             <span class="tag">Compétition</span>
             <h3>Tournois toutes catégories</h3>
             <p class="muted">Organisation de tournois U6 à U18, challenges, plateaux, événements clubs et journées foot.</p>
           </div>
-        </article>
+        </a>
       </div>
     </div>
   </section>
@@ -2131,15 +2140,22 @@
       const node = document.querySelector("#servicesGrid");
       if (!node || !Array.isArray(items)) return;
       node.innerHTML = items.map((item) => `
-        <article class="card service">
+        <a class="card service" href="${escapeHtml(item.link || serviceLink(item.title))}">
           <img src="${escapeHtml(item.image || "assets/vision-foot-logo.png")}" alt="${escapeHtml(item.alt || item.title || "Offre Vision Foot Académie")}">
           <div class="body">
             <span class="tag">${escapeHtml(item.tag)}</span>
             <h3>${escapeHtml(item.title)}</h3>
             <p class="muted">${escapeHtml(item.text)}</p>
           </div>
-        </article>
+        </a>
       `).join("");
+    }
+
+    function serviceLink(title) {
+      const normalized = String(title || "").toLowerCase();
+      if (normalized.includes("stage")) return "#stages";
+      if (normalized.includes("tournoi")) return "#tournois";
+      return "#entrainements";
     }
 
     function renderAboutPoints(items) {
