@@ -58,19 +58,40 @@
         "day": "15",
         "month": "juin",
         "title": "Vision Foot Challenge",
-        "text": "Un tournoi rythmé pour les jeunes catégories, avec matchs courts, classement, défis techniques et remise de trophées."
+        "text": "Un tournoi rythmé pour les jeunes catégories, avec matchs courts, classement, défis techniques et remise de trophées.",
+        "poster": "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=1200&q=82",
+        "categories": "U6 à U14, filles et garçons",
+        "place": "Complexe Fernand Fournier, Arles",
+        "price": "Sur inscription",
+        "contact": "07 68 83 64 04",
+        "details": "Affiche, règlement, horaires, format de compétition et informations pratiques seront ajoutés ici. Les équipes pourront consulter la plaquette avant inscription.",
+        "registrationLink": "#inscription-tournoi"
       },
       {
         "day": "22",
         "month": "juin",
         "title": "VFA Cup",
-        "text": "Une vraie journée compétition : poules, phases finales, prix individuels, photos d'équipe et ambiance tournoi."
+        "text": "Une vraie journée compétition : poules, phases finales, prix individuels, photos d'équipe et ambiance tournoi.",
+        "poster": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=82",
+        "categories": "Catégories jeunes selon édition",
+        "place": "Complexe Fernand Fournier, Arles",
+        "price": "Sur inscription",
+        "contact": "07 68 83 64 04",
+        "details": "Une fiche complète peut présenter le nombre d’équipes, les horaires, les récompenses, le règlement et les documents utiles.",
+        "registrationLink": "#inscription-tournoi"
       },
       {
         "day": "06",
         "month": "juil",
         "title": "Tournoi des étoiles",
-        "text": "Un événement festif pour finir la saison avec des matchs, animations, récompenses et une belle expérience pour les familles."
+        "text": "Un événement festif pour finir la saison avec des matchs, animations, récompenses et une belle expérience pour les familles.",
+        "poster": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=82",
+        "categories": "Toutes catégories ouvertes",
+        "place": "Complexe Fernand Fournier, Arles",
+        "price": "Sur inscription",
+        "contact": "07 68 83 64 04",
+        "details": "Ajoute ici les informations du tournoi : catégories, planning, adresse exacte, documents à télécharger et consignes d’accueil.",
+        "registrationLink": "#inscription-tournoi"
       }
     ],
     "tournamentCta": "Ton équipe veut participer au prochain tournoi VFA ?",

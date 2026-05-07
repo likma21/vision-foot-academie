@@ -582,6 +582,106 @@
       text-transform: uppercase;
     }
 
+    .events .card {
+      cursor: pointer;
+      color: inherit;
+      text-decoration: none;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .events .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(238, 116, 25, .5);
+      box-shadow: 0 18px 42px rgba(7, 17, 38, .12);
+    }
+
+    .event-detail-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 70;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(3, 7, 19, .78);
+    }
+
+    .event-detail-modal.open {
+      display: flex;
+    }
+
+    .event-detail-panel {
+      width: min(1040px, 100%);
+      max-height: min(88vh, 860px);
+      overflow: auto;
+      position: relative;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .36);
+    }
+
+    .event-detail-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--navy);
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .event-detail-poster {
+      min-height: 460px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(7, 17, 38, .08), rgba(7, 17, 38, .84)),
+        var(--event-image, url("assets/vision-foot-logo.png")) center / cover;
+      box-shadow: var(--shadow);
+    }
+
+    .event-detail-content {
+      padding: 18px 8px 8px;
+    }
+
+    .event-detail-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .event-detail-info div {
+      padding: 14px;
+      border-radius: var(--radius);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .event-detail-info span {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--orange);
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .event-detail-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
     .tournament-cta {
       margin-top: 26px;
       display: flex;
@@ -1211,6 +1311,8 @@
       .about-layout,
       .about-points,
       .about-media-grid,
+      .event-detail-panel,
+      .event-detail-info,
       .programs,
       .events,
       .contact-panel,
@@ -1241,6 +1343,10 @@
       .about-media:first-child {
         min-height: 300px;
         grid-row: auto;
+      }
+
+      .event-detail-poster {
+        min-height: 300px;
       }
 
       .media-card.large,
@@ -1774,6 +1880,29 @@
     </div>
   </section>
 
+  <div class="event-detail-modal" id="eventDetailModal" aria-hidden="true">
+    <div class="event-detail-panel" role="dialog" aria-modal="true" aria-label="Détails du tournoi">
+      <button class="event-detail-close" type="button" id="eventDetailClose" aria-label="Fermer">×</button>
+      <div class="event-detail-poster" id="eventDetailPoster"></div>
+      <div class="event-detail-content">
+        <span class="kicker" id="eventDetailDate"></span>
+        <h2 id="eventDetailTitle"></h2>
+        <p class="muted" id="eventDetailText"></p>
+        <div class="event-detail-info">
+          <div><span>Catégories</span><strong id="eventDetailCategories"></strong></div>
+          <div><span>Lieu</span><strong id="eventDetailPlace"></strong></div>
+          <div><span>Tarif</span><strong id="eventDetailPrice"></strong></div>
+          <div><span>Contact</span><strong id="eventDetailContact"></strong></div>
+        </div>
+        <p id="eventDetailDetails"></p>
+        <div class="event-detail-actions">
+          <a class="btn" id="eventDetailRegister" href="#inscription-tournoi">Inscription tournoi</a>
+          <a class="btn secondary" id="eventDetailBrochure" href="#" target="_blank" rel="noopener">Voir la plaquette</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <section id="inscription-tournoi" class="tournament-registration">
     <div class="wrap">
       <div class="section-head">
@@ -2035,6 +2164,7 @@
     const stageNote = document.querySelector("#stageNote");
     const tournamentNote = document.querySelector("#tournamentNote");
     window.vfaGalleryItems = [];
+    window.vfaTournamentItems = [];
     window.vfaCurrentAlbum = [];
     window.vfaCurrentMediaIndex = 0;
 
@@ -2053,10 +2183,19 @@
       if (event.target.id === "mediaNext") {
         showGalleryMedia(window.vfaCurrentMediaIndex + 1);
       }
+      const eventCard = event.target.closest("[data-tournament-index]");
+      if (eventCard) {
+        event.preventDefault();
+        openTournamentDetail(window.vfaTournamentItems[Number(eventCard.dataset.tournamentIndex)]);
+      }
+      if (event.target.id === "eventDetailClose" || event.target.id === "eventDetailModal") {
+        closeTournamentDetail();
+      }
     });
 
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") closeGalleryModal();
+      if (event.key === "Escape") closeTournamentDetail();
       if (event.key === "ArrowLeft") showGalleryMedia(window.vfaCurrentMediaIndex - 1);
       if (event.key === "ArrowRight") showGalleryMedia(window.vfaCurrentMediaIndex + 1);
       if ((event.key === "Enter" || event.key === " ") && event.target.classList.contains("media-card")) {
@@ -2214,13 +2353,47 @@
     function renderTournaments(items) {
       const node = document.querySelector("#eventCards");
       if (!node || !Array.isArray(items)) return;
-      node.innerHTML = items.map((item) => `
-        <article class="card">
+      window.vfaTournamentItems = items;
+      node.innerHTML = items.map((item, index) => `
+        <a class="card" href="#tournoi-detail" data-tournament-index="${index}" aria-label="Voir les détails de ${escapeHtml(item.title || "tournoi")}">
           <div class="event-date">${escapeHtml(item.day)}<span>${escapeHtml(item.month)}</span></div>
           <h3>${escapeHtml(item.title)}</h3>
           <p class="muted">${escapeHtml(item.text)}</p>
-        </article>
+        </a>
       `).join("");
+    }
+
+    function openTournamentDetail(item) {
+      const modal = document.querySelector("#eventDetailModal");
+      if (!modal || !item) return;
+      const date = [item.day, item.month].filter(Boolean).join(" ");
+      setText("eventDetailDate", date ? `Tournoi du ${date}` : "Tournoi Vision Foot Académie");
+      setText("eventDetailTitle", item.title || "");
+      setText("eventDetailText", item.text || "");
+      setText("eventDetailCategories", item.categories || "Toutes catégories");
+      setText("eventDetailPlace", item.place || "Complexe Fernand Fournier, Arles");
+      setText("eventDetailPrice", item.price || "Sur inscription");
+      setText("eventDetailContact", item.contact || "07 68 83 64 04");
+      setText("eventDetailDetails", item.details || "");
+      const poster = document.querySelector("#eventDetailPoster");
+      if (poster) poster.style.setProperty("--event-image", `url('${escapeHtml(item.poster || item.image || "assets/vision-foot-logo.png")}')`);
+      const register = document.querySelector("#eventDetailRegister");
+      if (register) register.href = item.registrationLink || "#inscription-tournoi";
+      const brochure = document.querySelector("#eventDetailBrochure");
+      if (brochure) {
+        const brochureUrl = item.brochure || item.brochureUrl || "";
+        brochure.href = brochureUrl || "#tournois";
+        brochure.style.display = brochureUrl ? "" : "none";
+      }
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeTournamentDetail() {
+      const modal = document.querySelector("#eventDetailModal");
+      if (!modal) return;
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
     }
 
     function renderGallery(items) {

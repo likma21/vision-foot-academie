@@ -161,6 +161,14 @@ collections:
                   - { label: "Mois", name: "month", widget: "string" }
                   - { label: "Nom", name: "title", widget: "string" }
                   - { label: "Description", name: "text", widget: "text" }
+                  - { label: "Affiche du tournoi", name: "poster", widget: "image", required: false }
+                  - { label: "Plaquette / dossier PDF ou image", name: "brochure", widget: "file", required: false }
+                  - { label: "Catégories concernées", name: "categories", widget: "string", required: false }
+                  - { label: "Lieu", name: "place", widget: "string", required: false }
+                  - { label: "Tarif", name: "price", widget: "string", required: false }
+                  - { label: "Contact", name: "contact", widget: "string", required: false }
+                  - { label: "Infos détaillées", name: "details", widget: "text", required: false }
+                  - { label: "Lien inscription", name: "registrationLink", widget: "string", required: false, default: "#inscription-tournoi" }
               - { label: "Phrase bouton tournoi", name: "tournamentCta", widget: "string" }
               - { label: "Texte bouton tournoi", name: "tournamentButton", widget: "string" }
               - { label: "Titre formulaire tournoi", name: "tournamentFormTitle", widget: "text" }
