@@ -157,6 +157,7 @@ collections:
                   - { label: "Titre", name: "title", widget: "string" }
                   - { label: "Texte", name: "text", widget: "string", required: false }
                   - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: "Lien vidéo ou média à ouvrir", name: "mediaUrl", widget: "string", required: false, hint: "Pour une vidéo, colle un lien YouTube/Vimeo ou sélectionne un fichier vidéo. Si ce champ est vide, la photo s'ouvrira en grand." }
                   - { label: "Grande carte", name: "large", widget: "boolean", default: false }
 
           - label: "Actualités"

@@ -719,6 +719,12 @@
         url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200&q=82") center / cover;
       box-shadow: var(--shadow);
       animation: gallery-scroll var(--gallery-duration, 42s) linear infinite;
+      cursor: pointer;
+    }
+
+    .media-card:focus-visible {
+      outline: 3px solid var(--yellow);
+      outline-offset: 4px;
     }
 
     .media-card.large {
@@ -765,6 +771,75 @@
       to {
         transform: translateX(calc(-1 * var(--gallery-distance, 0px)));
       }
+    }
+
+    .media-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(3, 7, 19, .88);
+    }
+
+    .media-modal.open {
+      display: flex;
+    }
+
+    .media-modal-panel {
+      width: min(980px, 100%);
+      max-height: min(88vh, 760px);
+      position: relative;
+      display: grid;
+      gap: 14px;
+      padding: 16px;
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .media-modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .media-modal-body img,
+    .media-modal-body video,
+    .media-modal-body iframe {
+      width: 100%;
+      max-height: 68vh;
+      display: block;
+      object-fit: contain;
+      border: 0;
+      border-radius: var(--radius);
+      background: #000;
+    }
+
+    .media-modal-body iframe {
+      aspect-ratio: 16 / 9;
+      height: auto;
+    }
+
+    .media-modal-caption h3 {
+      margin: 0 48px 4px 0;
+    }
+
+    .media-modal-caption p {
+      margin: 0;
+      color: var(--muted);
     }
 
     .news-grid {
@@ -1650,6 +1725,17 @@
     </div>
   </section>
 
+  <div class="media-modal" id="mediaModal" aria-hidden="true">
+    <div class="media-modal-panel" role="dialog" aria-modal="true" aria-label="Média galerie">
+      <button class="media-modal-close" type="button" id="mediaModalClose" aria-label="Fermer">×</button>
+      <div class="media-modal-body" id="mediaModalBody"></div>
+      <div class="media-modal-caption">
+        <h3 id="mediaModalTitle"></h3>
+        <p id="mediaModalText"></p>
+      </div>
+    </div>
+  </div>
+
   <section id="reseaux" class="social-zone">
     <div class="wrap">
       <div class="section-head">
@@ -1749,6 +1835,26 @@
     const tournamentForm = document.querySelector("#tournamentForm");
     const stageNote = document.querySelector("#stageNote");
     const tournamentNote = document.querySelector("#tournamentNote");
+    window.vfaGalleryItems = [];
+
+    document.addEventListener("click", (event) => {
+      const card = event.target.closest(".media-card");
+      if (card) {
+        event.preventDefault();
+        openGalleryItem(getGalleryItemFromCard(card));
+      }
+      if (event.target.id === "mediaModalClose" || event.target.id === "mediaModal") {
+        closeGalleryModal();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeGalleryModal();
+      if ((event.key === "Enter" || event.key === " ") && event.target.classList.contains("media-card")) {
+        event.preventDefault();
+        openGalleryItem(getGalleryItemFromCard(event.target));
+      }
+    });
 
     function readStore(key, fallback) {
       try {
@@ -1874,20 +1980,108 @@
       if (!node || !Array.isArray(items)) return;
       const media = items.length ? items : [];
       const repeated = [...media, ...media, ...media];
-      node.innerHTML = repeated.map((item) => `
-        <article class="media-card ${item.large ? "large" : ""}" style="${item.image ? `background-image: linear-gradient(180deg, rgba(7, 17, 38, .05), rgba(7, 17, 38, .88)), url('${escapeHtml(item.image)}')` : ""}">
+      window.vfaGalleryItems = media;
+      node.innerHTML = repeated.map((item, index) => {
+        const realIndex = media.length ? index % media.length : 0;
+        return `
+        <a class="media-card ${item.large ? "large" : ""}" href="${escapeHtml(item.mediaUrl || item.videoUrl || item.image || "#galerie")}" data-gallery-index="${realIndex}" aria-label="Ouvrir ${escapeHtml(item.title || "média galerie")}" style="${item.image ? `background-image: linear-gradient(180deg, rgba(7, 17, 38, .05), rgba(7, 17, 38, .88)), url('${escapeHtml(item.image)}')` : ""}">
           ${item.type === "Vidéo" ? '<span class="play">▶</span>' : ""}
           <span class="tag">${escapeHtml(item.type || "Photo")}</span>
           <h3>${escapeHtml(item.title)}</h3>
           ${item.text ? `<p>${escapeHtml(item.text)}</p>` : ""}
-        </article>
-      `).join("");
+        </a>
+      `;
+      }).join("");
+      Array.from(node.querySelectorAll(".media-card")).forEach((card) => {
+        card.onclick = (event) => {
+          event.preventDefault();
+          openGalleryItem(window.vfaGalleryItems[Number(card.dataset.galleryIndex)]);
+        };
+      });
       requestAnimationFrame(() => {
         const firstSet = Array.from(node.children).slice(0, media.length);
         const distance = firstSet.reduce((total, child) => total + child.getBoundingClientRect().width, 0) + Math.max(0, media.length - 1) * 18;
         node.style.setProperty("--gallery-distance", `${distance}px`);
         node.style.setProperty("--gallery-duration", `${Math.max(28, media.length * 8)}s`);
       });
+    }
+
+    function videoEmbedUrl(url) {
+      if (!url) return "";
+      try {
+        const parsed = new URL(url, window.location.href);
+        if (parsed.hostname.includes("youtube.com")) {
+          const id = parsed.searchParams.get("v");
+          return id ? `https://www.youtube.com/embed/${id}` : url;
+        }
+        if (parsed.hostname.includes("youtu.be")) {
+          return `https://www.youtube.com/embed/${parsed.pathname.replace("/", "")}`;
+        }
+        if (parsed.hostname.includes("vimeo.com")) {
+          return `https://player.vimeo.com/video/${parsed.pathname.replace("/", "")}`;
+        }
+      } catch {
+        return url;
+      }
+      return url;
+    }
+
+    function getGalleryItemFromCard(card) {
+      const indexed = window.vfaGalleryItems[Number(card.dataset.galleryIndex)];
+      if (indexed) return indexed;
+      const title = card.querySelector("h3")?.textContent || "Média Vision Foot Académie";
+      const text = card.querySelector("p")?.textContent || "";
+      const type = card.querySelector(".tag")?.textContent || "Photo";
+      const bg = card.style.backgroundImage || getComputedStyle(card).backgroundImage || "";
+      const imageMatch = bg.match(/url\(["']?([^"')]+)["']?\)/);
+      return { title, text, type, image: imageMatch ? imageMatch[1] : "assets/vision-foot-logo.png" };
+    }
+
+    function hydrateStaticGallery() {
+      const cards = Array.from(document.querySelectorAll("#galleryGrid .media-card"));
+      if (!cards.length || window.vfaGalleryItems.length) return;
+      window.vfaGalleryItems = cards.map((card, index) => {
+        card.dataset.galleryIndex = String(index);
+        card.setAttribute("role", "button");
+        card.setAttribute("tabindex", "0");
+        const item = getGalleryItemFromCard(card);
+        card.setAttribute("aria-label", `Ouvrir ${item.title}`);
+        card.onclick = () => openGalleryItem(window.vfaGalleryItems[index]);
+        return item;
+      });
+    }
+
+    function openGalleryItem(item) {
+      const modal = document.querySelector("#mediaModal");
+      const body = document.querySelector("#mediaModalBody");
+      if (!modal || !body || !item) return;
+      const mediaUrl = item.mediaUrl || item.videoUrl || item.image || "";
+      const isVideo = item.type === "Vidéo";
+      const isFileVideo = /\.(mp4|webm|ogg)(\?.*)?$/i.test(mediaUrl);
+      const isEmbeddable = /(youtube\.com|youtu\.be|vimeo\.com)/i.test(mediaUrl);
+      if (isVideo && isFileVideo) {
+        body.innerHTML = `<video src="${escapeHtml(mediaUrl)}" controls autoplay playsinline></video>`;
+      } else if (isVideo && isEmbeddable) {
+        body.innerHTML = `<iframe src="${escapeHtml(videoEmbedUrl(mediaUrl))}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+      } else if (isVideo && mediaUrl && mediaUrl !== item.image) {
+        window.open(mediaUrl, "_blank", "noopener");
+        return;
+      } else {
+        body.innerHTML = `<img src="${escapeHtml(item.image || mediaUrl || "assets/vision-foot-logo.png")}" alt="${escapeHtml(item.title || "Média Vision Foot Académie")}">`;
+      }
+      setText("mediaModalTitle", item.title || "");
+      setText("mediaModalText", item.text || "");
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeGalleryModal() {
+      const modal = document.querySelector("#mediaModal");
+      const body = document.querySelector("#mediaModalBody");
+      if (!modal || !body) return;
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      body.innerHTML = "";
     }
 
     function renderNews(items) {
@@ -2078,6 +2272,7 @@
       tournamentNote.textContent = "Inscription tournoi enregistrée. Vision Foot Académie vous recontactera pour confirmer.";
     });
 
+    hydrateStaticGallery();
     loadOnlineContent();
   </script>
 </body>
